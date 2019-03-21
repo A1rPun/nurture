@@ -7,4 +7,4 @@ recursive(N) -> recursive(N-1) + recursive(N-2).
 
 linear(N) -> iter(N, 0, 1).
 iter(0, Result, Next) -> Result;
-iter(Iter, Result, Next) -> when Iter > 0 -> iter(Iter - 1, Next, Result + Next).
+iter(Iter, Result, Next) when Iter > 0 -> iter(Iter - 1, Next, Result + Next).
