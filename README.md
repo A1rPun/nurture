@@ -1,3 +1,13 @@
+# Nurture
+
+A quick reference for your favourite languages.
+
+Contents
+
+- Small how to compile & run your program
+- Hello world example
+- Fibonacci example (if present)
+
 ## C
 
 ```
@@ -8,7 +18,7 @@ $ ./{output}
 ## C++
 
 ```
-$ g++ -o {output} {program}.cp
+$ g++ -o {output} {program}.cpp
 $ ./{output}
 ```
 
@@ -17,6 +27,12 @@ $ ./{output}
 ```
 Eshell
 1> c({modulename}).
+```
+
+## HTML
+
+```
+$ {browser} {page}.html
 ```
 
 ## JavaScript (node)
