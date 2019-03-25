@@ -29,6 +29,17 @@ Eshell
 1> c({modulename}).
 ```
 
+## Go
+
+```
+$ go run {program}.go
+```
+Or
+```
+$ go build {program}.go
+$ ./{program}
+```
+
 ## HTML
 
 ```
