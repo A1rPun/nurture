@@ -1,12 +1,18 @@
 # Nurture
 
-A quick reference for your favourite languages.
+[Yet another programming chrestomathy](www.rosettacode.org)
 
 Contents
 
 - Small how to compile & run your program
 - Hello world example
 - Fibonacci example (if present)
+
+## Batch
+
+```
+C:\> {program}.bat
+```
 
 ## C
 
@@ -22,11 +28,30 @@ $ g++ -o {output} {program}.cpp
 $ ./{output}
 ```
 
+## Elixir
+
+```
+$ iex {module}.ex
+
+Interactive elixir
+iex(1)> {module}.{function}
+:ok
+```
+Or
+```
+$ elixir -r {module}.ex -e '{module}.{function}'
+```
+
 ## Erlang
 
 ```
+$ erl
+
 Eshell
-1> c({modulename}).
+1> c({module}).
+{ok,{module}}
+2> {module}:{function}().
+ok
 ```
 
 ## Go
