@@ -1,6 +1,6 @@
 # Nurture
 
-[Yet another programming chrestomathy](www.rosettacode.org)
+[Yet another programming chrestomathy](http://www.rosettacode.org)
 
 Contents
 
@@ -20,12 +20,22 @@ C:\> {program}.bat
 $ gcc -o {output} {program}.c
 $ ./{output}
 ```
+Or
+```
+$ make {program}
+$ ./{program}
+```
 
 ## C++
 
 ```
 $ g++ -o {output} {program}.cpp
 $ ./{output}
+```
+Or
+```
+$ make {program}
+$ ./{program}
 ```
 
 ## Elixir
