@@ -138,6 +138,12 @@ $ php {program}.php
 $ python {program}.py
 ```
 
+## Ruby
+
+```
+$ ruby {program}.rb
+```
+
 ## Rust
 
 ```
