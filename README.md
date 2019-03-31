@@ -2,11 +2,22 @@
 
 [Yet another programming chrestomathy](http://www.rosettacode.org)
 
-Contents
+**Contents**
 
 - Small how to compile & run your program
 - Hello world example
 - Fibonacci example (if present)
+
+**ToDo**
+
+- create a nice TOC
+- classlike object in every language
+- more syntax definitions in every language
+- how to package in every language
+- how to debug (in VSCode preferably)
+- pascallike: turbopascal, delphi
+- javalike: clojure, scala, groovy
+- others: assembly, nim, reasonml, haskell, perl, ruby
 
 ## Batch
 
@@ -81,10 +92,26 @@ $ ./{program}
 $ {browser} {page}.html
 ```
 
+## Java
+
+```
+$ javac {program}.java
+$ java {program}
+```
+
+Or create a jar and run it
+
 ## JavaScript (node)
 
 ```
 $ node {program}.js
+```
+
+## Kotlin
+
+```
+$ kotlinc {program}.kt -include-runtime -d {program}.jar
+$ java -jar {program}.jar
 ```
 
 ## Lisp
