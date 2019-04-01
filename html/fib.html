@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden ratio</title>
+  <style>
+  /* Container */
+  body {
+    background: #333;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+  }
+
+  /* Fib */
+  .row {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .column {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .box {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .row > .fib {
+    width: 61.803398874989485%;
+  }
+
+  .column > .fib {
+    height: 61.803398874989485%;
+  }
+
+  /* Colors */
+  .fib {
+    background: #444;
+  }
+
+  .fib .fib {
+    background: #555;
+  }
+
+  .fib .fib .fib {
+    background: #666;
+  }
+
+  .fib .fib .fib .fib {
+    background: #777;
+  }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="box fib">
+      <div class="column">
+        <div class="box fib">
+          <div class="row">
+            <div class="box fib">
+              <div class="column">
+                <div class="box fib"></div>
+                <div class="box"></div>
+              </div>
+            </div>
+            <div class="box"></div>
+          </div>
+        </div>
+        <div class="box"></div>
+      </div>
+    </div>
+    <div class="box"></div>
+  </div>
+</body>
+</html>
