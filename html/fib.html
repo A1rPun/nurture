@@ -1,87 +1,125 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golden ratio</title>
-  <style>
-  /* Container */
-  body {
-    background: #333;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golden ratio</title>
+    <style>
+      /* Divine flex ratio */
+      .fib {
+        flex: 0 61.803398874989485%;
+      }
 
-  /* Fib */
-  .row {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
+      /* Layout */
+      body {
+        background: #000;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+      }
 
-  .column {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
+      .stretch {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
 
-  .box {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
+      .row {
+        display: flex;
+      }
 
-  .row > .fib {
-    width: 61.803398874989485%;
-  }
+      .column {
+        display: flex;
+        flex-direction: column;
+      }
 
-  .column > .fib {
-    height: 61.803398874989485%;
-  }
+      .box {
+        flex: 1;
+        position: relative;
+      }
 
-  /* Colors */
-  .fib {
-    background: #444;
-  }
-
-  .fib .fib {
-    background: #555;
-  }
-
-  .fib .fib .fib {
-    background: #666;
-  }
-
-  .fib .fib .fib .fib {
-    background: #777;
-  }
-  </style>
-</head>
-<body>
-  <div class="row">
-    <div class="box fib">
-      <div class="column">
-        <div class="box fib">
-          <div class="row">
-            <div class="box fib">
-              <div class="column">
-                <div class="box fib"></div>
-                <div class="box"></div>
+      /* Colors */
+      .fib1 {
+        background: #111;
+      }
+      .fib2 {
+        background: #222;
+      }
+      .fib3 {
+        background: #333;
+      }
+      .fib4 {
+        background: #444;
+      }
+      .fib5 {
+        background: #555;
+      }
+      .fib6 {
+        background: #676767;
+      }
+      .fib7 {
+        background: #777;
+      }
+      .fib8 {
+        background: #888;
+      }
+      .fib9 {
+        background: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Let's build a XML-pyramid -->
+    <div class="row stretch">
+      <div class="fib"></div>
+      <div class="box">
+        <div class="column stretch">
+          <div class="box">
+            <div class="row stretch">
+              <div class="box">
+                <div class="column stretch">
+                  <div class="fib fib3"></div>
+                  <div class="box">
+                    <div class="row stretch">
+                      <div class="fib fib4"></div>
+                      <div class="box">
+                        <div class="column stretch">
+                          <div class="box">
+                            <div class="row stretch">
+                              <div class="box">
+                                <div class="column stretch">
+                                  <div class="fib fib7"></div>
+                                  <div class="box">
+                                    <div class="row stretch">
+                                      <div class="fib fib8"></div>
+                                      <div class="box">
+                                        <div class="column stretch">
+                                          <div class="box"></div>
+                                          <div class="fib fib9"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="fib fib6"></div>
+                            </div>
+                          </div>
+                          <div class="fib fib5"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+              <div class="fib fib2"></div>
             </div>
-            <div class="box"></div>
           </div>
+          <div class="fib fib1"></div>
         </div>
-        <div class="box"></div>
       </div>
     </div>
-    <div class="box"></div>
-  </div>
-</body>
+  </body>
 </html>
