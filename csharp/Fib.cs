@@ -9,7 +9,6 @@ namespace Fibonacci
         {
             var input = 29;
             Console.WriteLine(FibLinear(input));
-            Console.WriteLine(FibFormula(input));
         }
 
         static int Fib(int n)
@@ -22,7 +21,8 @@ namespace Fibonacci
             if (n < 2) return n;
             var previousFib = 0;
             var fib = 1;
-            while (--n) (previousFib, fib) = (fib, previousFib + fib);
+            while (--n)
+                (previousFib, fib) = (fib, previousFib + fib);
             return fib;
         }
 

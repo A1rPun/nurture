@@ -21,4 +21,4 @@ In every directory there is a README with a quick how to compile & run your prog
 **Languages**
 - pascallike: turbopascal, delphi
 - javalike: clojure, scala, groovy
-- others: assembly, reasonml, haskell
+- others: haskell
