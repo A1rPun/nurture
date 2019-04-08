@@ -4,6 +4,7 @@ import (
   "os"
   "fmt"
   "strconv"
+  "math/big"
 )
 
 func main() {
@@ -12,7 +13,9 @@ func main() {
     input = 29
   }
   fibonacci := fibLinear(input)
-  fmt.Printf("%d = %d\n", input, fibonacci)
+  fibBig := fibLinearBig(input)
+  fmt.Printf("Normal int: %d = %d\n", input, fibonacci)
+  fmt.Printf("Mathbig int: %d = %d\n", input, fibBig)
 }
 
 func fib(n int) int {
@@ -27,6 +30,15 @@ func fibLinear(n int) int {
   fib := 1
   for ;n > 1; n-- {
     fib, previousFib = fib + previousFib, fib
+  }
+  return fib
+}
+
+func fibLinearBig(n int) *big.Int {
+  previousFib := big.NewInt(0)
+  fib := big.NewInt(1)
+  for ;n > 1; n-- {
+    fib, previousFib = big.NewInt(0).Add(fib, previousFib), fib
   }
   return fib
 }
