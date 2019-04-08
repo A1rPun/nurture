@@ -1,0 +1,5 @@
+# Python
+
+```
+$ python {program}.py
+```

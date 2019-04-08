@@ -1,0 +1,5 @@
+# Lua
+
+```
+$ lua {program}.lua
+```

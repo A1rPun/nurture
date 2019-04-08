@@ -1,0 +1,5 @@
+# Ruby
+
+```
+$ ruby {program}.rb
+```
