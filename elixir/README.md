@@ -7,7 +7,8 @@ Interactive elixir
 iex(1)> {module}.{function}
 :ok
 ```
-Or
+
+**One-liner**
 ```
 $ elixir -r {module}.ex -e '{module}.{function}'
 ```
