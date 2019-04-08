@@ -3,15 +3,6 @@
 [Yet another programming chrestomathy](http://www.rosettacode.org)
 In every directory there is a README with a quick how to compile & run your program and a bare minimum "hello world" example.
 
-
-### Fibonacci sequence
-
-**Test**
-- `fib(0)` should return 0
-- `fib(5)` should return 5
-- `fib(93)` goes over the max value of an Int64
-- `fib(1000000)` shouldn't take longer than 10 seconds
-
 **Todo**
 - discover inheritance in every language
 - more syntax definitions in every language
@@ -22,3 +13,17 @@ In every directory there is a README with a quick how to compile & run your prog
 - pascallike: turbopascal, delphi
 - javalike: clojure, scala, groovy
 - others: haskell
+
+### Fibonacci sequence
+
+**Test**
+```
+fib(N)
+```
+- `N = 0` should return 0
+- `N = 5` should return 5
+- `N = 78` is the last safe integer in JavaScript
+- `N = 92` is the last safe 64bit integer
+- `N = 1474` is the last representable integer in PHP
+- `N = 1476` is the last representable integer in JavaScript
+- `N = 1000000` shouldn't take longer than a couple seconds
