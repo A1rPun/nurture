@@ -1,29 +1,24 @@
-const phi = (5 ** 0.5 + 1) / 2;
+const input = (typeof process !== "undefined" && process.argv[2]) || 29;
+console.log(fibLinear(input));
+
 function fib(n) {
   return n < 2 ? n : fib(n - 1) + fib(n - 2);
 }
 
-function fibLinear(num) {
-  if (num < 2) return num;
-  let previousFib = 0;
-  let fib = 1;
-  while (--num) [previousFib, fib] = [fib, previousFib + fib];
+function fibLinear(n) {
+  if (n < 2) return n;
+  let prevFib = 0, fib = 1;
+  while (--n) [prevFib, fib] = [fib, prevFib + fib];
   return fib;
 }
 
 function fibFormula(n) {
-  return Math.round(phi ** n / 5 ** 0.5);
+  return Math.round(((5 ** 0.5 + 1) / 2) ** n / 5 ** 0.5);
 }
 
-const input = (typeof process !== 'undefined' && process.argv[2]) || 29;
-console.log(fibLinear(input));
-
-function fibLinear2(num) {
-  if (num < 2) return num;
-  num--;
-  let n = 1;
-  while (--num) {
-    n = Math.round(n * phi);
-  }
-  return n;
+function fibTail(n) {
+  return fibTailIter(0, 1, n);
+}
+function fibTailIter(prevFib, fib, n) {
+  return n < 1 ? prevFib : n === 1 ? fib : fibTailIter(fib, prevFib + fib, n - 1);
 }

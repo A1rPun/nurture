@@ -5,9 +5,9 @@ function fib($n) {
 
 function fibLinear($n) {
     if ($n < 2) return $n;
-    $previousFib = 0;
+    $prevFib = 0;
     $fib = 1;
-    while (--$n) list($previousFib, $fib) = array($fib, $fib + $previousFib);
+    while (--$n) list($prevFib, $fib) = array($fib, $fib + $prevFib);
     return $fib;
 }
 

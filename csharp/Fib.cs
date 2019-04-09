@@ -19,10 +19,9 @@ namespace Fibonacci
         static int FibLinear(int n)
         {
             if (n < 2) return n;
-            var previousFib = 0;
-            var fib = 1;
+            var prevFib = 0, fib = 1;
             while (--n)
-                (previousFib, fib) = (fib, previousFib + fib);
+                (prevFib, fib) = (fib, prevFib + fib);
             return fib;
         }
 

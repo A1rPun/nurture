@@ -5,10 +5,9 @@ def fib(n):
 
 def fibLinear(n):
   if n < 2: return n
-  previousFib = 0
-  fib = 1
+  prevFib, fib = 0, 1
   while n > 1:
-    previousFib, fib = fib, fib + previousFib
+    prevFib, fib = fib, fib + prevFib
     n -= 1
   return fib
 
@@ -18,15 +17,12 @@ def fibFormula(n):
 
 def fibTail(n):
   return fibTailIter(0, 1, n)
-def fibTailIter(a, b, n):
-  return a if n < 1 else b if n == 1 else fibTailIter(b, a + b, n - 1)
+def fibTailIter(prevFib, fib, n):
+  return prevFib if n < 1 else fib if n == 1 else fibTailIter(fib, prevFib + fib, n - 1)
 
 input = (
   int(sys.argv[1])
   if len(sys.argv) > 1
   else 29
 )
-#print(fib(input))
 print(fibLinear(input))
-#print(fibFormula(input))
-#print(fibTail(input))

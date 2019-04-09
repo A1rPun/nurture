@@ -26,19 +26,20 @@ func fib(n int) int {
 }
 
 func fibLinear(n int) int {
-  previousFib := 0
-  fib := 1
+  if n < 2 {
+    return n
+  }
+  prevFib, fib := 0, 1
   for ;n > 1; n-- {
-    fib, previousFib = fib + previousFib, fib
+    fib, prevFib = fib + prevFib, fib
   }
   return fib
 }
 
 func fibLinearBig(n int) *big.Int {
-  previousFib := big.NewInt(0)
-  fib := big.NewInt(1)
+  prevFib, fib := big.NewInt(0), big.NewInt(1)
   for ;n > 1; n-- {
-    fib, previousFib = big.NewInt(0).Add(fib, previousFib), fib
+    fib, prevFib = big.NewInt(0).Add(fib, prevFib), fib
   }
   return fib
 }
