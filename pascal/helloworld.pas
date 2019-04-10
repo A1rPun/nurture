@@ -1,4 +1,4 @@
-program helloworld;
+program Helloworld;
 begin
- writeln('Hello world!');
+ WriteLn('Hello world!');
 end.
