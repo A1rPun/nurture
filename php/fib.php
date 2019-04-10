@@ -15,7 +15,13 @@ function fibFormula($n) {
     return round(((5 ** .5 + 1) / 2) ** $n / 5 ** .5);
 }
 
+function fibTail($n) {
+    return fibTailIter(0, 1, $n);
+}
+function fibTailIter($prevFib, $fib, $n) {
+    return $n < 1 ? $prevFib : $n == 1 ? $fib : fibTailIter($fib, $prevFib + $fib, $n - 1);
+}
+
 $input = count($argv) > 1 ? $argv[1] : 29;
 echo(fibLinear($input)."\n");
-echo(fibFormula($input)."\n");
 ?>

@@ -24,6 +24,5 @@ fib(N)
 - `N = 5` should return 5
 - `N = 78` is the last safe integer in JavaScript
 - `N = 92` is the last safe 64bit integer
-- `N = 1474` is the last representable integer in PHP
-- `N = 1476` is the last representable integer in JavaScript
+- `N = 1476` is the last representable integer in JavaScript & PHP
 - `N = 1000000` shouldn't take longer than a couple seconds
