@@ -17,9 +17,9 @@ begin
   fib := 1;
   while n > 1 do
   begin
-    temp := fib;
-    fib := prevFib + fib;
-    prevFib := temp;
+    temp := prevFib + fib;
+    prevFib := fib;
+    fib := temp;
     dec(n);
   end;
   fibLinear := fib;
