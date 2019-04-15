@@ -11,8 +11,7 @@ let rec fibTailRecursion n: bigint =
   let rec fibTailIter prevFib fib n =
     match n with
     | 0 -> prevFib
-    | 1 -> fib
-    | n -> (fibTailIter fib (prevFib + fib) (n - 1))
+    | _ -> (fibTailIter fib (prevFib + fib) (n - 1))
   fibTailIter 0I 1I n
 
 let rec fibGenerator prevFib fib = seq {

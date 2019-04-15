@@ -19,7 +19,7 @@ function fibTail($n) {
     return fibTailIter(0, 1, $n);
 }
 function fibTailIter($prevFib, $fib, $n) {
-    return $n < 1 ? $prevFib : $n == 1 ? $fib : fibTailIter($fib, $prevFib + $fib, $n - 1);
+    return $n == 0 ? $prevFib : fibTailIter($fib, $prevFib + $fib, $n - 1);
 }
 
 $input = count($argv) > 1 ? $argv[1] : 29;

@@ -18,7 +18,7 @@ def fibFormula(n):
 def fibTail(n):
   return fibTailIter(0, 1, n)
 def fibTailIter(prevFib, fib, n):
-  return prevFib if n < 1 else fib if n == 1 else fibTailIter(fib, prevFib + fib, n - 1)
+  return prevFib if n == 0 else fibTailIter(fib, prevFib + fib, n - 1)
 
 input = (
   int(sys.argv[1])

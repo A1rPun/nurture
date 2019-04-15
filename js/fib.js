@@ -20,7 +20,7 @@ function fibTailRecursion(n) {
   return fibTailIter(0, 1, n);
 }
 function fibTailIter(prevFib, fib, n) {
-  return n < 1 ? prevFib : n === 1 ? fib : fibTailIter(fib, prevFib + fib, n - 1);
+  return n === 0 ? prevFib : fibTailIter(fib, prevFib + fib, n - 1);
 }
 
 function* fibLinearGenerator(prevFib = 0, fib = 1) {

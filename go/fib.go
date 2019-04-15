@@ -8,9 +8,12 @@ import (
 )
 
 func main() {
-  input, err := strconv.Atoi(os.Args[1])
-  if err != nil {
-    input = 29
+  input := 29
+  if len(os.Args) > 1 {
+    conversion, err := strconv.Atoi(os.Args[1])
+    if err == nil {
+      input = conversion
+    }
   }
   fibonacci := fibLinear(input)
   fibBig := fibLinearBig(input)
