@@ -9,10 +9,28 @@ In every directory there is a README with a quick how to compile & run your prog
 - how to package in every language
 - how to debug (in VSCode preferably)
 
-**Languages**
-- pascallike: turbopascal, delphi
-- javalike: clojure, scala, groovy
-- others: haskell
+**These [languages](https://wiki.archlinux.org/index.php/Programming_languages) are likely to get explored**
+- AWK
+- Ada
+- Clojure
+- Crystal
+- Dart
+- Groovy
+- Julia
+- ML
+- Octave
+- R
+- Scala
+- Scheme
+- Swift
+
+**These languages will (probably) not be explored in this repo**
+- BASIC
+- COBOL
+- Forth
+- Fortran
+- Objective-C
+- Tcl
 
 ### Fibonacci sequence
 
