@@ -1,0 +1,5 @@
+# Swift
+
+```
+$ swift {program}.swift
+```
