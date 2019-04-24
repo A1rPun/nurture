@@ -19,7 +19,6 @@ In every directory there is a README with a quick how to compile & run your prog
 - Julia
 - ML
 - Octave
-- R
 - Scala
 - Scheme
 
@@ -41,5 +40,5 @@ fib(N)
 - `N = 5` should return 5
 - `N = 78` is the last safe integer in JavaScript
 - `N = 92` is the last safe 64bit integer
-- `N = 1476` is the last representable integer in JavaScript & PHP
+- `N = 1476` is the last representable integer in JavaScript, PHP & R
 - `N = 1000000` shouldn't take longer than a couple seconds
