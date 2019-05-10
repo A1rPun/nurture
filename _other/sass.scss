@@ -1,0 +1,12 @@
+$base-color: #50533c;
+// Adjust lightness HSL
+$base-color-darker: darken($base-color, 10%);
+$base-color-lighter: lighten($base-color, 10%);
+// Adjust saturation HSL
+$base-color-saturated: saturate($base-color, 10%);
+$base-color-desaturated: desaturate($base-color, 10%);
+// Adjust hue HSL
+$base-color-hue: adjust-hue($base-color, 10%);
+// Add alpha transparency
+$base-color-transparent: rgba($base-color, .5);
+
