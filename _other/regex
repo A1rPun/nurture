@@ -1,0 +1,5 @@
+^ = start
+$ = end
+* = {0,} = zero or more
++ = {1,} = one or more
+? = {0,1} = optional or nongreedy
