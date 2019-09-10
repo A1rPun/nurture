@@ -7,7 +7,8 @@ In every directory there is a README with a quick how to compile & run your prog
 - discover inheritance in every language
 - more syntax definitions in every language
 - how to package in every language
-- how to debug (in VSCode preferably)
+- how to debug
+- link to [learnxinyminutes](https://learnxinyminutes.com/)
 
 **These [languages](https://wiki.archlinux.org/index.php/Programming_languages) are likely to get explored**
 - AWK
