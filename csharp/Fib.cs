@@ -1,5 +1,4 @@
 ﻿using System;
-using Math;
 
 namespace Fibonacci
 {
@@ -19,15 +18,16 @@ namespace Fibonacci
         static int FibLinear(int n)
         {
             if (n < 2) return n;
-            var prevFib = 0, fib = 1;
-            while (--n)
+            var prevFib = 0;
+            var fib = 1;
+            while (--n == 0)
                 (prevFib, fib) = (fib, prevFib + fib);
             return fib;
         }
 
         static int FibFormula(int n)
         {
-            return Math.Round(((5 ** .5 + 1) / 2) ** n / 5 ** .5);
+            return (int)Math.Round(Math.Pow((Math.Pow(5, .5) + 1) / 2, n) / Math.Pow(5, .5));
         }
     }
 }
