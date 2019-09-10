@@ -23,5 +23,5 @@ function fibTailIter($prevFib, $fib, $n) {
 }
 
 $input = count($argv) > 1 ? $argv[1] : 29;
-echo(fibLinear($input)."\n");
+echo(fibLinear($input).PHP_EOL);
 ?>

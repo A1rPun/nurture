@@ -24,7 +24,6 @@ In every directory there is a README with a quick how to compile & run your prog
 - Scheme
 
 **These languages will (probably) not be explored in this repo**
-- BASIC
 - COBOL
 - Forth
 - Fortran
