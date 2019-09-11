@@ -9,3 +9,7 @@ Or
 $ make {program}
 $ ./{program}
 ```
+
+## Remarks
+
+- Function order does matter else you get a `was not declared in this scope` error.

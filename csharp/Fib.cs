@@ -6,7 +6,7 @@ namespace Fibonacci
   {
     public static void Main(string[] args)
     {
-      int input = args.Length > 0 ? int.Parse(args[0]) : 29;
+      var input = args.Length > 0 ? int.Parse(args[0]) : 29;
       Console.WriteLine(FibLinear(input));
     }
 
