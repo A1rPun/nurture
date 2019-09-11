@@ -1,0 +1,18 @@
+# SQL
+
+## MySQL (mariadb)
+
+```
+$ mysql {database_name} < {query}.sql
+```
+
+## Postgres
+
+```
+$ psql -f {query}.sql
+```
+
+**One-liner**
+```
+$ psql -c "select 'Hello world! '"
+```
