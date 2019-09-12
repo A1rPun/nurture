@@ -16,3 +16,17 @@ $ psql -f {query}.sql
 ```
 $ psql -c "select 'Hello world! '"
 ```
+
+### Troubleshooting
+
+Postgres
+
+```
+$ sudo -u postgres createuser -s $(whoami); createdb $(whoami)
+```
+
+MariaDB
+
+```
+$ mysql -u root -p
+```
