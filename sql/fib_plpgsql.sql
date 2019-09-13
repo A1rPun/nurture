@@ -9,8 +9,8 @@ $$ LANGUAGE plpgsql;
 
 CREATE OR REPLACE FUNCTION fibLinear(n INTEGER) RETURNS INTEGER AS $$
 DECLARE
-  prevFib INTEGER := 0 ;
-  fib INTEGER := 1 ;
+  prevFib INTEGER := 0;
+  fib INTEGER := 1;
 BEGIN
   IF (n < 2) THEN
     RETURN n;
@@ -31,4 +31,19 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-SELECT fibFormula(29);
+CREATE OR REPLACE FUNCTION fibTailIter(prevFib INTEGER, fib INTEGER, n INTEGER) RETURNS INTEGER AS $$
+BEGIN
+  IF (n = 0) THEN
+    RETURN prevFib;
+  END IF;
+  RETURN fibTailIter(fib, prevFib + fib, n - 1);
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION fibTailRecursion(n INTEGER) RETURNS INTEGER AS $$
+BEGIN
+  RETURN fibTailIter(0, 1, n);
+END;
+$$ LANGUAGE plpgsql;
+
+SELECT fibLinear(29);
