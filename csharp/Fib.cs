@@ -33,5 +33,15 @@ namespace Fibonacci
     {
       return (decimal)Math.Round(Math.Pow((Math.Pow(5, .5) + 1) / 2, n) / Math.Pow(5, .5));
     }
+
+    static decimal FibTailRecursion(int n)
+    {
+      return FibTailIter(0, 1, n);
+    }
+
+    static decimal FibTailIter(decimal prevFib, decimal fib, int n)
+    {
+      return n == 0 ? prevFib : FibTailIter(fib, prevFib + fib, n - 1);
+    }
   }
 }
