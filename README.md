@@ -18,7 +18,6 @@ In every directory there is a README with a quick how to compile & run your prog
 - Dart
 - Groovy
 - Julia
-- ML
 - Octave
 - Scala
 - Scheme
