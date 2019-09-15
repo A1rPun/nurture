@@ -1,3 +1,7 @@
 *:before {
   content: "Hello world!";
 }
+
+*:after {
+  content: "Hello world!";
+}

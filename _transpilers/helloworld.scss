@@ -1,0 +1,20 @@
+%helloworld {
+  content: "Hello world!";
+}
+
+* {
+  &:before { @extend helloworld; }
+  &:after { @extend helloworld; }
+}
+
+/*
+Compiles to the following CSS:
+
+*:before {
+	content: "Hello world!";
+}
+
+*:after {
+	content: "Hello world!";
+}
+*/
