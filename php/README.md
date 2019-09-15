@@ -4,7 +4,7 @@
 $ php {program}.php
 ```
 
-**One-liner**
+### One-liner
 ```
 $ php -r '{code}'
 ```

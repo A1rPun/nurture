@@ -6,3 +6,8 @@
 ```
 $ clojure {program}.clj
 ```
+
+### One-liner
+```
+$ clojure -e '{code}'
+```

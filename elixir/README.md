@@ -8,7 +8,7 @@ iex(1)> {module}.{function}
 :ok
 ```
 
-**One-liner**
+### One-liner
 ```
 $ elixir -r {module}.ex -e '{module}.{function}'
 ```

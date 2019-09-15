@@ -12,7 +12,7 @@ $ mysql {database_name} < {query}.sql
 $ psql -f {query}.sql
 ```
 
-**One-liner**
+### One-liner
 ```
 $ psql -c "select 'Hello world! '"
 ```

@@ -7,7 +7,7 @@
 $ groovy {program}.groovy
 ```
 
-**One-liner**
+### One-liner
 ```
 $ groovy -e 'println "Hello world!"'
 ```

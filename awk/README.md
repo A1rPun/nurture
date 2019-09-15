@@ -7,12 +7,15 @@
 $ awk -f {program}.awk
 ```
 
-Or make it executable using `#!/usr/bin/awk -f`
-```
-$ chmod +x {program}.awk
-```
-
-**One-liner**
+### One-liner
 ```
 $ awk '{code}'
+```
+
+### Shebang
+`#!/usr/bin/awk -f`
+
+```
+$ chmod +x {program}.awk
+$ ./{program}.awk
 ```

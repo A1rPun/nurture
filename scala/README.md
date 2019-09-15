@@ -7,7 +7,7 @@
 $ scala {program}.scala
 ```
 
-**One-liner**
+### One-liner
 ```
 $ scala -e '{code}'
 ```

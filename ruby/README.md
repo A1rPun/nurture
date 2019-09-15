@@ -4,7 +4,7 @@
 $ ruby {program}.rb
 ```
 
-**One-liner**
+### One-liner
 ```
 $ ruby -e '{code}'
 ```

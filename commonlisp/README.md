@@ -1,4 +1,4 @@
-# Lisp
+# Common lisp
 
 ## Use
 
@@ -17,7 +17,7 @@ $ sbcl
 $ sbcl --script {program}.lisp
 ```
 
-**One-liner**
+### One-liner
 ```
 sbcl --non-interactive --eval '{code}'
 ```
