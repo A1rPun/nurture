@@ -15,6 +15,7 @@ These binaries are build on `Arch Linux x86_64 5.2.11-arch1-1-ARCH`.
 
 Language<br>(compiler) | Binary size<br>in bytes | Binary type<br>on Linux
 --- | ---: | ---
+Lisp (sbcl) | 203 | fasl
 Erlang (erlc) | 652 | beam
 Java (javac) | 762 | jar
 Kotlin (kotlinc) | 1 165 | jar
