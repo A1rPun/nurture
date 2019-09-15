@@ -5,15 +5,11 @@ $ javac {program}.java
 $ java {program}
 ```
 
-Or create a manifest and jar and run it
+## Compile
 
-**META-INF/MANIFEST.M**
+The order of the `jar` arguments matter
 ```
-Main-Class: name.space.class
-```
-
-The order of the arguments matter `jar`
-```
+$ javac {program}.java
 $ jar cmf META-INF/MANIFEST.MF {program}.jar {program}.class
 $ java -jar {program}.jar
 ```

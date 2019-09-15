@@ -12,16 +12,15 @@ $ scala {program}.scala
 $ scala -e '{code}'
 ```
 
+## Compile
 
-
-Or create a binary java
-```
-$ jar cmf META-INF/MANIFEST.MF {program}.jar
-$ java -jar {program}.jar
-```
-
-Or create a binary
 ```
 $ scalac {program}.scala -d {program}.jar
 $ scala {program}.jar
+```
+
+Or create a JVM jar (need scala-library.jar). The order of the `jar` arguments matter
+```
+$ jar cmf META-INF/MANIFEST.MF {program}.jar
+$ java -jar {program}.jar
 ```

@@ -8,9 +8,14 @@ Every language directory contains:
 - Bare minimum `Hello world!` example.
 - Possibly some cool Fibonacci implementations. The program will accept an argument from the command line.
 
+Other directories:
+
+- `_other` is a folder with some random and relatively funny stuff.
+- `_transpilers` is a collection of helloworld files for transpilers.
+
 ## [Binary size comparison](#binary-size-comparison)
 
-Here is an overview that compares the **helloworld** binary for compiled languages in bytes using the default build command unless specified.
+Here is an overview that compares the **helloworld** binary for compiled languages in bytes using the default build command unless specified. Only explored languages with a compiler are included.
 These binaries are build on `Arch Linux x86_64 5.2.11-arch1-1-ARCH`.
 
 Language<br>(compiler) | Binary size<br>in bytes | Binary type<br>on Linux
@@ -40,7 +45,11 @@ Kotlin (`-include-runtime`) | 1 309 825 | jar
 Go | 2 008 649 | -
 Rust (rustc)| 2 473 272 | -
 
-> AWK, Batch, Clojure, Dart, Groovy, Javascript, Julia, Lua, Octave, Perl, PHP, Python, R, Racket, Ruby, Scala, Scheme, Shellscript, SQL are not on this list (for various reasons).
+```
+Groovy (groovy) | ? | jar
+Scala (scalac) | ? | jar
+```
+
 
 ## Fibonacci sequence
 
