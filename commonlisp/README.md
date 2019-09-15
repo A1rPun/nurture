@@ -1,6 +1,7 @@
 # Common lisp
 
-## Use
+- [Community documentation](https://lispcookbook.github.io/cl-cookbook/)
+- [Learn Common lisp in Y minutes](https://learnxinyminutes.com/docs/common-lisp/)
 
 ```
 CL-USER> {code}
@@ -13,6 +14,7 @@ $ sbcl
 * {code}
 ```
 
+Or
 ```
 $ sbcl --script {program}.lisp
 ```
