@@ -1,35 +1,46 @@
 # Nurture
 
-[Yet another programming chrestomathy](http://www.rosettacode.org)
-In every directory there is a README with a quick how to compile & run your program and a bare minimum "hello world" example.
+> [Yet another programming chrestomathy](http://www.rosettacode.org)
 
-**Todo**
-- discover inheritance in every language
-- more syntax definitions in every language
-- how to package in every language
-- how to debug
-- link to [learnxinyminutes](https://learnxinyminutes.com/)
+Every language directory contains:
 
-**These [languages](https://wiki.archlinux.org/index.php/Programming_languages) are likely to get explored**
-- AWK
-- Ada
-- Clojure
-- Crystal
-- Dart
-- Groovy
-- Julia
-- Octave
-- Scala
-- Scheme
+- README with a quick how to compile & run your program. `{program}` denotes a placeholder.
+- Bare minimum `Hello world!` example.
+- Possibly some cool Fibonacci implementations. The program will accept an argument from the command line.
 
-**These languages will (probably) not be explored in this repo**
-- COBOL
-- Forth
-- Fortran
-- Objective-C
-- Tcl
+## [Binary size comparison](#binary-size-comparison)
 
-### Fibonacci sequence
+Here is an overview that compares the **helloworld** binary for compiled languages in bytes using the default build command.
+These binaries are build on `Arch Linux x86_64 5.2.11-arch1-1-ARCH`.
+
+Language<br>(compiler) | Binary size<br>in bytes | Binary type<br>on Linux
+--- | ---: | ---
+Erlang (erlc) | 652 | beam
+Java (javac) | 762 | jar
+Kotlin (kotlinc) | 1 165 | jar
+Elixir (elixirc) | 1 220 | beam
+C# (mcs)| 3 072 | exe
+F# (fsharpc)| 4 096 | exe
+Visual Basic (vbnc)| 6 144 | exe
+Assembly x86 (as, ld)| 8 928 | -
+Swift (swiftc) | 14 368 | -
+C (gcc)| 16 544 | -
+C++ (g++)| 17 192 | -
+OCaml (ocamlc)| 20 567 | -
+Pascal (fpc)| 181 800 | -
+Standard ML (mlton)| 204 728 | -
+Nim | 225 936 | -
+Ada (gnatmake) | 374 200 | -
+Crystal | 954 224 | -
+Haskell (ghc)| 1 028 200 | -
+D (dmd)| 1 118 304 | -
+Kotlin `-include-runtime` | 1 309 825 | jar
+Go | 2 008 649 | -
+Rust (rustc)| 2 473 272 | -
+
+> AWK, Batch, Clojure, Dart, Groovy, Javascript, Julia, Lua, Octave, Perl, PHP, Python, R, Racket, Ruby, Scala, Scheme, Shellscript, SQL are not on this list (for various reasons).
+
+## Fibonacci sequence
 
 **Test**
 ```
@@ -41,3 +52,9 @@ fib(N)
 - `N = 92` is the last safe 64bit integer
 - `N = 1476` is the last representable integer in JavaScript, PHP & R
 - `N = 1000000` should not error
+
+## Todo
+- How to package in every language
+- How to debug without proprietary software
+- Memory usage comparison in helloworld
+- Fibonacci algo comparison (type limitations, stack overflows)
