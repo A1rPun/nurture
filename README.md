@@ -59,8 +59,8 @@ fib(N)
 - `N = 5` should return 5
 - `N = 78` is the last safe integer in JavaScript
 - `N = 92` is the last safe 64bit integer
-- `N = 184` is the last safe float in Common lisp
-- `N = 1476` is the last representable integer in JavaScript, PHP & R
+- `N = 184` is the last safe 32bit float
+- `N = 1476` is the last representable 64bit float in JavaScript, PHP, R & Common lisp.
 - `N = 1000000` should not error
 
 ## Todo

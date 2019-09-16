@@ -15,7 +15,7 @@
     (fib-tail-recursive (- n 1) fib (+ prevFib fib))))
 
 (defun fib-formula (n)
-  (round (/ (expt (/ (+ (expt 5 .5) 1) 2) n) (expt 5 .5))))
+  (round (/ (expt (/ (+ (expt 5 .5d0) 1) 2) n) (expt 5 .5d0))))
 
 (handler-case
   (let ((nthfib (parse-integer (cadr sb-ext:*posix-argv*))))
