@@ -16,11 +16,8 @@ function fibFormula(n) {
   return Math.round(((5 ** 0.5 + 1) / 2) ** n / 5 ** 0.5);
 }
 
-function fibTailRecursion(n) {
-  return fibTailIter(0, 1, n);
-}
-function fibTailIter(prevFib, fib, n) {
-  return n === 0 ? prevFib : fibTailIter(fib, prevFib + fib, n - 1);
+function fibTailRecursive(n, prevFib = 0, fib = 1) {
+  return n === 0 ? prevFib : fibTailRecursive(n - 1, fib, prevFib + fib);
 }
 
 function* fibLinearGenerator(prevFib = 0, fib = 1) {

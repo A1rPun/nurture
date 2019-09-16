@@ -25,6 +25,15 @@ module Fibonacci
     return fib
   end function
 
+  function FibTailRecursive(
+      ByVal n as Integer,
+      Optional ByVal prevFib as Integer = 0,
+      Optional ByVal fib as Integer = 1
+    )
+    if n = 0 then return prevFib
+    return FibTailRecursive(n - 1, fib, prevFib + fib)
+  end function
+
   sub Main(ByVal cmdArgs() As String)
     dim input as Integer
     if cmdArgs.Length > 0 then

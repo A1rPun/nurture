@@ -9,13 +9,13 @@ fibPattern n
   | n < 2 = n
   | otherwise = fibPattern (n - 1) + fibPattern (n - 2)
 
-fibTailRecursion :: Integer -> Integer
-fibTailRecursion n = fibTailIter 0 1 n
+fibTailRecursive :: Integer -> Integer
+fibTailRecursive n = fibTailIter n 0 1
 
 fibTailIter :: Integer -> Integer -> Integer -> Integer
-fibTailIter prevFib fib n
+fibTailIter n prevFib fib
   | n == 0 = prevFib
-  | otherwise = fibTailIter fib (prevFib + fib) (n - 1)
+  | otherwise = fibTailIter (n - 1) fib (prevFib + fib)
 
 fibFormula :: Double -> Integer
 fibFormula n = round (((5 ** 0.5 + 1) / 2) ** n / 5 ** 0.5)
@@ -24,7 +24,7 @@ main :: IO ()
 main = do
   args <- getArgs
   let input = if length args > 0 then read $ head args else 29
-  putStrLn (show (fibTailRecursion input))
+  putStrLn (show (fibTailRecursive input))
   -- putStrLn (show (fibUnfold!!input))
 
 -- Functions below are inspired by

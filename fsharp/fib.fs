@@ -7,12 +7,12 @@ let rec fibPattern n: bigint =
   | 1 -> 1I
   | _ -> fibPattern(n - 1) + fibPattern(n - 2)
 
-let rec fibTailRecursion n: bigint =
-  let rec fibTailIter prevFib fib n =
+let rec fibTailRecursive n: bigint =
+  let rec fibTailIter n prevFib fib =
     match n with
     | 0 -> prevFib
-    | _ -> (fibTailIter fib (prevFib + fib) (n - 1))
-  fibTailIter 0I 1I n
+    | _ -> (fibTailIter (n - 1) fib (prevFib + fib))
+  fibTailIter n 0I 1I
 
 let rec fibGenerator prevFib fib = seq {
   yield prevFib
@@ -34,6 +34,6 @@ let fibLinear n: bigint =
 [<EntryPoint>]
 let main(args) =
     let input = if args.Length > 0 then args.[0] |> int else 29
-    printfn "%A" (fibTailRecursion input)
+    printfn "%A" (fibTailRecursive input)
     // printfn "%A" (fibUnfold |> Seq.item input)
     0

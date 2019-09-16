@@ -15,11 +15,8 @@ function fibFormula($n) {
   return round(((5 ** .5 + 1) / 2) ** $n / 5 ** .5);
 }
 
-function fibTail($n) {
-  function fibTailIter($prevFib, $fib, $n) {
-    return $n === 0 ? $prevFib : fibTailIter($fib, $prevFib + $fib, $n - 1);
-  }
-  return fibTailIter(0, 1, $n);
+function fibTailRecursive($n, $prevFib = 0, $fib = 1) {
+  return $n === 0 ? $prevFib : fibTailRecursive($n - 1, $fib, $prevFib + $fib);
 }
 
 $input = count($argv) > 1 ? $argv[1] : 29;

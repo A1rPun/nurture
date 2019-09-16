@@ -16,14 +16,14 @@ fn fib_pattern(n: usize) -> usize {
   }
 }
 
-fn fib_tail_recursion(n: usize) -> usize {
-  fn fib_tail_iter(prev_fib: usize, fib: usize, n: usize) -> usize {
+fn fib_tail_recursive(n: usize) -> usize {
+  fn fib_tail_iter(n: usize, prev_fib: usize, fib: usize) -> usize {
     match n {
       0 => prev_fib,
-      n => fib_tail_iter(fib, prev_fib + fib, n - 1),
+      n => fib_tail_iter(n - 1, fib, prev_fib + fib),
     }
   }
-  fib_tail_iter(0, 1, n)
+  fib_tail_iter(n, 0, 1)
 }
 
 fn fib_linear(mut n: usize) -> usize {

@@ -15,11 +15,9 @@ namespace Fibonacci
       return n < 2 ? n : Fib(n - 1) + Fib(n - 2);
     }
 
-    static decimal FibLinear(int n)
+    static decimal FibLinear(int n, decimal prevFib = 0, decimal fib = 1)
     {
       if (n < 2) return n;
-      var prevFib = 0;
-      var fib = 1;
       while (--n > 0)
       {
         var temp = prevFib + fib;
@@ -34,14 +32,9 @@ namespace Fibonacci
       return (decimal)Math.Round(Math.Pow((Math.Pow(5, .5) + 1) / 2, n) / Math.Pow(5, .5));
     }
 
-    static decimal FibTailRecursion(int n)
+    static decimal FibTailRecursive(int n, decimal prevFib = 0, decimal fib = 1)
     {
-      return FibTailIter(0, 1, n);
-    }
-
-    static decimal FibTailIter(decimal prevFib, decimal fib, int n)
-    {
-      return n == 0 ? prevFib : FibTailIter(fib, prevFib + fib, n - 1);
+      return n == 0 ? prevFib : FibTailRecursive(n - 1, fib, prevFib + fib);
     }
   }
 }

@@ -16,7 +16,7 @@ Other directories:
 ## [Binary size comparison](#binary-size-comparison)
 
 Here is an overview that compares the **helloworld** binary for compiled languages in bytes using the default build command on the CLI. Only explored languages with a compiler are included.
-These binaries are build on `Arch Linux x86_64 5.2.11-arch1-1-ARCH`.
+These binaries are build on [`Arch Linux x86_64 5.2.11-arch1-1-ARCH`](https://wiki.archlinux.org/index.php/Programming_languages).
 
 Language<br>(compiler) | Binary size<br>in bytes | Binary type<br>on Linux | Runtime<br>dependency
 --- | ---: | --- | ---

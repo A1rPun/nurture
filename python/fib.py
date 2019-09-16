@@ -15,10 +15,8 @@ def fibFormula(n):
   "Only precise till the 70th fib number, errors after 1474th fib number"
   return round(((5 ** 0.5 + 1) / 2) ** n / 5 ** 0.5);
 
-def fibTail(n):
-  return fibTailIter(0, 1, n)
-def fibTailIter(prevFib, fib, n):
-  return prevFib if n == 0 else fibTailIter(fib, prevFib + fib, n - 1)
+def fibTailRecursive(n, prevFib = 0, fib = 1):
+  return prevFib if n == 0 else fibTailIter(n - 1, fib, prevFib + fib)
 
 input = (
   int(sys.argv[1])

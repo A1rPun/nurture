@@ -7,13 +7,11 @@ proc fib(n: int64): int64 =
   else:
     result = fib(n - 1) + fib(n - 2)
 
-proc fibTail(n: int64, prevFib: int64, fib: int64): int64 =
+proc fibTailRecursive(n: int64, prevFib: int64 = 0, fib: int64 = 1): int64 =
   if n == 0:
     result = prevFib
   else:
-    result = fibTail(n - 1, fib, prevFib + fib)
-proc fibTail(n: int64): int64 =
-  result = fibTail(n, 0, 1)
+    result = fibTailRecursive(n - 1, fib, prevFib + fib)
 
 proc fibLinear(n: int64): int64 =
   var
