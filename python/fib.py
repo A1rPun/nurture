@@ -12,11 +12,10 @@ def fibLinear(n):
   return fib
 
 def fibFormula(n):
-  "Only precise till the 70th fib number, errors after 1474th fib number"
   return round(((5 ** 0.5 + 1) / 2) ** n / 5 ** 0.5);
 
 def fibTailRecursive(n, prevFib = 0, fib = 1):
-  return prevFib if n == 0 else fibTailIter(n - 1, fib, prevFib + fib)
+  return prevFib if n == 0 else fibTailRecursive(n - 1, fib, prevFib + fib)
 
 input = (
   int(sys.argv[1])

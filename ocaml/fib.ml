@@ -4,15 +4,15 @@ let rec fib n =
   else
     fib (n - 1) + fib (n - 2);;
 
-(* TODO: fibLinear *)
-(* TODO: fibFormula *)
+let dirtyRound x = int_of_float (floor (x +. 0.5)) (* TODO: Properly round a float *)
+let rec fibFormula n = dirtyRound ((((5.0 ** 0.5 +. 1.0) /. 2.0) ** float_of_int n) /. (5.0 ** 0.5))
 
 let rec fibTailRecursive ?(prevFib = 0) ?(fib = 1) n =
   match n with
     | 0 -> prevFib
     | _ -> fibTailRecursive ~prevFib:fib ~fib:(prevFib + fib) (n - 1)
 
-(* An explicit definition of the recursive nature from Fibonacci *)
+(* An explicit definition of the recursive nature *)
 let rec fibFormal n =
   match n with
   | 0 -> 0
@@ -25,10 +25,3 @@ let input =
   else
     29;;
 Printf.printf "%d\n" (fibTailRecursive input);;
-
-(* let fibTailRecursive nth =
-  let rec fibTailIter n prevFib fib =
-    match n with
-    | 0 -> prevFib
-    | _ -> fibTailIter (n - 1) fib (prevFib + fib)
-  in fibTailIter nth 0 1;; *)

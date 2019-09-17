@@ -16,16 +16,24 @@ function fibTailRecursive(n, prevFib = 0, fib = 1) {
   return n === 0 ? prevFib : fibTailRecursive(n - 1, fib, prevFib + fib);
 }
 
-function* fibLinearGenerator(prevFib = 0, fib = 1) {
-  yield prevFib;
-  yield fib;
-  while (true) {
-    [prevFib, fib] = [fib, prevFib + fib];
-    yield fib;
-  }
+function fibMemoization(n) {
+  if (!fibMemoization.cache) fibMemoization.cache = new Map([[0, 0], [1, 1]]);
+  const getFib = n =>
+    fibMemoization.cache.has(n)
+      ? fibMemoization.cache.get(n)
+      : getFib(n - 1) + getFib(n - 2);
+  return getFib(n);
 }
+
 function fibGenerator(n) {
-  for (let x of fibLinearGenerator()) if (--n < 0) return x;
+  function* generator(prevFib = 0, fib = 1) {
+    yield prevFib;
+    while (true) {
+      yield fib;
+      [prevFib, fib] = [fib, prevFib + fib];
+    }
+  }
+  for (let x of generator()) if (--n < 0) return x;
 }
 
 function fibLinearBig(n, prevFib = 0n, fib = 1n) {
@@ -34,7 +42,7 @@ function fibLinearBig(n, prevFib = 0n, fib = 1n) {
   return fib;
 }
 
-// An explicit definition of the recursive nature from Fibonacci
+// An explicit definition of the recursive nature
 function fibFormal(n) {
   switch (n) {
     case 0:
@@ -46,6 +54,6 @@ function fibFormal(n) {
   }
 }
 
-const input = (typeof process !== "undefined" && process.argv[2]) || 29;
-console.log(fibLinear(input));
-console.log(fibLinearBig(BigInt(input))); // https://github.com/tc39/proposal-bigint
+const input = (typeof process !== 'undefined' && process.argv[2]) || 29;
+console.log(`Fibonacci ${input}: ${fibLinear(input)}`);
+console.log(`Fibonacci ${input} BigInt: ${fibLinearBig(BigInt(input))}`); // https://github.com/tc39/proposal-bigint

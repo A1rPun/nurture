@@ -12,16 +12,17 @@ let fibLinear n: bigint =
       i <- i - 1
     fib
 
-// TODO: let rec fibFormula n:
+let rec fibFormula n: bigint =
+  System.Math.Round(((5.0 ** 0.5 + 1.0) / 2.0) ** (n |> float) / 5.0 ** 0.5) |> bigint
 
 let rec fibTailRecursive n: bigint =
-  let rec fibTailIter n prevFib fib =
+  let rec fibTailAuxiliary n prevFib fib =
     match n with
     | 0 -> prevFib
-    | _ -> (fibTailIter (n - 1) fib (prevFib + fib))
-  fibTailIter n 0I 1I
+    | _ -> (fibTailAuxiliary (n - 1) fib (prevFib + fib))
+  fibTailAuxiliary n 0I 1I
 
-// An explicit definition of the recursive nature from Fibonacci
+// An explicit definition of the recursive nature
 let rec fibFormal n: bigint =
   match n with
   | 0 -> 0I
@@ -38,6 +39,6 @@ let rec fibGenerator prevFib fib = seq {
 [<EntryPoint>]
 let main(args) =
     let input = if args.Length > 0 then args.[0] |> int else 29
-    printfn "%A" (fibTailRecursive input)
+    printfn "%A" (fibLinear input)
     // printfn "%A" (fibUnfold |> Seq.item input)
     0

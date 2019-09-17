@@ -9,13 +9,13 @@ fibPattern n
   | n < 2 = n
   | otherwise = fibPattern (n - 1) + fibPattern (n - 2)
 
-fibTailRecursive :: Integer -> Integer
-fibTailRecursive n = fibTailIter n 0 1
-
-fibTailIter :: Integer -> Integer -> Integer -> Integer
-fibTailIter n prevFib fib
+fibTailAuxiliary :: Integer -> Integer -> Integer -> Integer
+fibTailAuxiliary n prevFib fib
   | n == 0 = prevFib
-  | otherwise = fibTailIter (n - 1) fib (prevFib + fib)
+  | otherwise = fibTailAuxiliary (n - 1) fib (prevFib + fib)
+
+fibTailRecursive :: Integer -> Integer
+fibTailRecursive n = fibTailAuxiliary n 0 1
 
 fibFormula :: Double -> Integer
 fibFormula n = round (((5 ** 0.5 + 1) / 2) ** n / 5 ** 0.5)
@@ -30,7 +30,7 @@ main = do
 -- Functions below are inspired by
 -- https://wiki.haskell.org/The_Fibonacci_sequence
 
--- An explicit definition of the recursive nature from Fibonacci
+-- An explicit definition of the recursive nature
 fibFormal :: Integer -> Integer
 fibFormal 0 = 0
 fibFormal 1 = 1
