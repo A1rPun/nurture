@@ -11,7 +11,6 @@ module Fibonacci
     return Math.Round(Math.Pow((Math.Pow(5, .5) + 1) / 2, n) / Math.Pow(5, .5))
   end function
 
-  ' Want to use BigInteger here
   function FibLinear(ByVal n as Integer) as Integer
     if n < 2 then return n
     dim prevFib as Integer = 0

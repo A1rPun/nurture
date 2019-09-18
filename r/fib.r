@@ -13,6 +13,14 @@ fibLinear <- function(n) {
   fibs[1]
 }
 
+fibFormula <- function(n) {
+  round(((5 ^ 0.5 + 1) / 2) ^ n / 5 ^ 0.5)
+}
+
+fibTailRecursive <- function(n, prevFib = 0, fib = 1) {
+  if (n == 0) prevFib else Recall(n - 1, fib, prevFib + fib)
+}
+
 args = commandArgs(trailingOnly=TRUE)
 input = if (length(args) > 0) as.numeric(args[1]) else 29
-print(fibLinear(input))
+print(fibFormula(input))

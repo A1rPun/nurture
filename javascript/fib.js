@@ -9,7 +9,7 @@ function fibLinear(n, prevFib = 0, fib = 1) {
 }
 
 function fibFormula(n) {
-  return Math.round(((5 ** 0.5 + 1) / 2) ** n / 5 ** 0.5);
+  return Math.round(((5 ** .5 + 1) / 2) ** n / 5 ** .5);
 }
 
 function fibTailRecursive(n, prevFib = 0, fib = 1) {

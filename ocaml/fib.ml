@@ -5,7 +5,8 @@ let rec fib n =
     fib (n - 1) + fib (n - 2);;
 
 let dirtyRound x = int_of_float (floor (x +. 0.5)) (* TODO: Properly round a float *)
-let rec fibFormula n = dirtyRound ((((5.0 ** 0.5 +. 1.0) /. 2.0) ** float_of_int n) /. (5.0 ** 0.5))
+let rec fibFormula n =
+  dirtyRound ((((5.0 ** 0.5 +. 1.0) /. 2.0) ** float_of_int n) /. (5.0 ** 0.5))
 
 let rec fibTailRecursive ?(prevFib = 0) ?(fib = 1) n =
   match n with
