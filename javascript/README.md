@@ -11,3 +11,11 @@ $ node {program}.js
 ```
 $ node -e '{code}'
 ```
+
+## Knowledge / ramblings
+
+[`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) parameter names:
+- Accumulator (acc)
+- Current Value (x, cur)
+- Current Index (i, idx)
+- Source Array (src)
