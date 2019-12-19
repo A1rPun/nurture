@@ -5,17 +5,17 @@ Mongo shell
 $ mongo
 ```
 
-List all DB's
+List databases
 ```
 > show dbs
 ```
 
-Change to db
+Connect to db
 ```
 > use {database}
 ```
 
-Show all collectins
+Show all collections
 ```
 > show collections
 ```
