@@ -19,3 +19,14 @@ $ node -e '{code}'
 - Current Value (x, cur)
 - Current Index (i, idx)
 - Source Array (src)
+
+## Package management
+
+- NPM
+- Yarn
+- Bower
+
+Download vendor packages
+```
+$ npm install
+```

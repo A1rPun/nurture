@@ -3,7 +3,8 @@
 # or
 # $ docker pull node:lts
 FROM node:latest
-MAINTAINER Thom Bakker <A1r@Pun.com>
+LABEL maintainer="Thom Bakker <A1r@Pun.com>"
+LABEL description="An example Dockerfile"
 
 # Example run command
 RUN ps aux

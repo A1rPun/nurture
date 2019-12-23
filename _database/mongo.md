@@ -1,4 +1,4 @@
-# Mongo DB
+# :seedling: Mongo DB
 
 Mongo shell
 ```
