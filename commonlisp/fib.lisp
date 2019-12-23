@@ -36,10 +36,10 @@
     ((= n 1) 1)
     (t (+ (fib-formal (- n 1)) (fib-formal (- n 2))))))
 
-;; (defun fib-linear-loop-do (n &optional (prev-fib 0) (fib 1))
-;;   (loop :repeat n
-;;      :do (+ prev-fib fib)
-;;      :finally (return prev-fib)))
+(defun fib-list (n &optional (acc '(1 0)))
+  (if (< n 2)
+      (reverse acc)
+      (fib-list (1- n) (cons (reduce #'+ (subseq acc 0 2)) acc))))
 
 (handler-case
   (let ((nthfib (parse-integer (cadr sb-ext:*posix-argv*))))

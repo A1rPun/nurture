@@ -57,3 +57,6 @@ function fibFormal(n) {
 const input = (typeof process !== 'undefined' && process.argv[2]) || 29;
 console.log(`Fibonacci ${input}: ${fibLinear(input)}`);
 console.log(`Fibonacci ${input} BigInt: ${fibLinearBig(BigInt(input))}`); // https://github.com/tc39/proposal-bigint
+
+// Minified tail recursive
+// f=(a,b=0,c=1)=>a?f(a-1,c,b+c):b

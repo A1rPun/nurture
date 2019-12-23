@@ -12,7 +12,7 @@ def fibLinear(n):
   return fib
 
 def fibFormula(n):
-  return round(((5 ** 0.5 + 1) / 2) ** n / 5 ** 0.5);
+  return round(((5 ** 0.5 + 1) / 2) ** n / 5 ** 0.5)
 
 def fibTailRecursive(n, prevFib = 0, fib = 1):
   return prevFib if n == 0 else fibTailRecursive(n - 1, fib, prevFib + fib)
@@ -23,3 +23,6 @@ input = (
   else 29
 )
 print(fibLinear(input))
+
+# Minified tail recursive
+# def f(a, b = 0, c = 1): return f(a - 1, c, b + c) if a else b
