@@ -26,9 +26,9 @@ Erlang (erlc) | 652 | beam | erlang
 Java (javac) | 762 | jar | java
 Kotlin (kotlinc) | 1 165 | jar | java
 Elixir (elixirc) | 1 220 | beam | erlang
-C# (mcs) | 3 072 | exe
-F# (fsharpc) | 4 096 | exe
-Visual Basic (vbnc) | 6 144 | exe
+C# (mcs) | 3 072 | exe | .NET
+F# (fsharpc) | 4 096 | exe | .NET
+Visual Basic (vbnc) | 6 144 | exe | .NET
 Assembly x86 (as, ld) | 8 928 |
 Swift (swiftc) | 14 368 |
 C (gcc) | 16 544 |
@@ -49,19 +49,41 @@ Rust (rustc) | 2 473 272 |
 Groovy (groovy) | ? | jar | java
 Scala (scalac) | ? | jar | java
 
-## Fibonacci sequence
+## [Fibonacci sequence](#Fibonacci)
+
+- Test accuracy `N = 48`, `N = 78`, `N = 92`, `N = 100`
+- Test tail recursive computation `N = 1000` (can cause a stack overflow)
+- Speed `N = 1000000`
 
 **Test**
 ```
 fib(N)
 ```
-- `N = 0` should return 0
-- `N = 5` should return 5
-- `N = 78` is the last safe integer in JavaScript
-- `N = 92` is the last safe 64bit integer
-- `N = 184` is the last safe 32bit float
-- `N = 1476` is the last representable 64bit float in JavaScript, PHP, R & Common lisp.
-- `N = 1000000` should not error
+
+Nth number | Remarks
+--- | ---
+`N = 0` | should return 0
+`N = 5` | should return 5
+`N = 13` | is the last safe 8bit integer
+`N = 24` | is the last safe 16bit integer
+`N = 47` | is the last safe 32bit integer
+`N = 78` | is the last safe double-precision 64bit integer (53bit)
+`N = 92` | is the last safe 64bit integer
+`N = 184` | is the last safe 32bit single-float
+`N = 1474` | is the last representable 64bit double-float
+`N = 1000000` | should not error
+
+**The fib file**
+
+Function name | Speed | Remarks
+--- | --- | ---
+Fib | Slow | Slow because of unoptimized recursion, but the best to read
+Fib linear | Quick | Imperative definition.
+Fib formula | Quickest | Binet's formula is precise till approximate 70th fib number because of floating-point arithmetic
+Fib tail recursive | Quicker | The best version in most languages. Easy to read
+Fib formal | Slow | Explicitly state all code paths. `F0 = 0`, `F1 = 1`, `Fn = Fn-1 + Fn-2`
+Fib memoization | Moderate | An optimized recursion. Hold a cache of return values for subsequent calls to the function.
+Fib list | Quick | Return a list from 0 to N
 
 ## Todo
 - How to package in every language

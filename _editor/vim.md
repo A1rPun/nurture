@@ -6,6 +6,7 @@
 `:q!` = saviour of poor souls
 `%` = select whole file
 `!` = filter
+`/` = start search
 
 ## Useful commands
 

@@ -25,17 +25,6 @@ function fibMemoization(n) {
   return getFib(n);
 }
 
-function fibGenerator(n) {
-  function* generator(prevFib = 0, fib = 1) {
-    yield prevFib;
-    while (true) {
-      yield fib;
-      [prevFib, fib] = [fib, prevFib + fib];
-    }
-  }
-  for (let x of generator()) if (--n < 0) return x;
-}
-
 function fibLinearBig(n, prevFib = 0n, fib = 1n) {
   if (n < 2) return n;
   while (--n) [prevFib, fib] = [fib, prevFib + fib];
@@ -54,9 +43,23 @@ function fibFormal(n) {
   }
 }
 
+// TODO: WIP
+function* fibGenerator(n, prevFib = 0, fib = 1) {
+  if (n < 1) {
+    yield n;
+    return;
+  }
+  yield prevFib;
+  while (n--) {
+    yield fib;
+    [prevFib, fib] = [fib, prevFib + fib];
+  }
+}
+
 const input = (typeof process !== 'undefined' && process.argv[2]) || 29;
 console.log(`Fibonacci ${input}: ${fibLinear(input)}`);
 console.log(`Fibonacci ${input} BigInt: ${fibLinearBig(BigInt(input))}`); // https://github.com/tc39/proposal-bigint
+// for (let x of fibGenerator(input)) console.log(x);
 
 // Minified tail recursive
 // f=(a,b=0,c=1)=>a?f(a-1,c,b+c):b
