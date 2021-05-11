@@ -49,11 +49,36 @@ Rust (rustc) | 2 473 272 |
 Groovy (groovy) | ? | jar | java
 Scala (scalac) | ? | jar | java
 
+## [Hello World](#HelloWorld)
+
+The simplest of programs. Mandatory test that has to be done before doing anything in that language.
+It tests your ability to press the right sequence of buttons to produce something on the screen.
+The reward is a greeting to the world and possibly a working program.
+
+Syntax that can be learned, depending on the implementation:
+- Produce output
+- Use of String data structure
+- Create entry point for program
+
+As a added benefit you know how to compile/build and/or run a program.
+
 ## [Fibonacci sequence](#Fibonacci)
 
-- Test accuracy `N = 48`, `N = 78`, `N = 92`, `N = 100`
-- Test tail recursive computation `N = 1000` (can cause a stack overflow)
-- Speed `N = 1000000`
+Although a simple sequence at first, one can learn much about a language by implementing a function that returns the Nth fibonacci number. A factorial function is also fun to implement.
+
+Syntax that can be learned, depending on the implementation:
+- Creating a function
+- Calling a function with parameters
+- Reading (user) input
+- Returning result from a function
+- Produce pretty output
+- Create variables in memory
+- Swap two variables in memory
+- If/then/else logic
+- Comparison operators
+- Use of recursion
+- Use of exponentiation
+- Use of standard Math library
 
 **Test**
 ```
@@ -72,6 +97,20 @@ Nth number | Remarks
 `N = 184` | is the last safe 32bit single-float
 `N = 1474` | is the last representable 64bit double-float
 `N = 1000000` | should not error
+
+- Test accuracy `N = 48`, `N = 78`, `N = 92`, `N = 100`
+- Test tail recursive computation `N = 1000` (can cause a stack overflow)
+- Speed `N = 1000000`
+
+Language | Integer overflow | Float overflow | Stack overflow | Speed (Algo)
+--- | --- | --- | --- | ---
+Common Lisp | | yes float 64bit |
+Erlang | | yes float 64bit |
+Haskell |  |
+JavaScript | BigInt | yes float 64bit |
+PHP | | yes float 64bit |
+Python | | yes float 64bit |
+R | | yes float 64bit |
 
 **The fib file**
 

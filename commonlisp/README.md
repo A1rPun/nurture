@@ -5,6 +5,12 @@
 - [Optimizing Fibonacci](http://fare.tunes.org/files/fun/fibonacci.lisp)
 
 ```
+$ sbcl --script {program}.lisp
+```
+
+### REPL
+
+```
 CL-USER> {code}
 ```
 
@@ -13,11 +19,6 @@ Or
 $ sbcl
 
 * {code}
-```
-
-Or
-```
-$ sbcl --script {program}.lisp
 ```
 
 ### One-liner

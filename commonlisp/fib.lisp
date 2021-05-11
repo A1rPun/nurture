@@ -1,7 +1,7 @@
 (defun fib (n)
   (if (< n 2)
     n
-    (+ (fib (- n 2)) (fib (- n 1)))))
+    (+ (fib (- n 1)) (fib (- n 2)))))
 
 (defun fib-linear-loop (n)
   (loop :repeat n

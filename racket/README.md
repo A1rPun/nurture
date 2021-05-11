@@ -6,3 +6,15 @@
 ```
 $ racket {program}.rkt
 ```
+
+### REPL
+
+```
+$ racket
+```
+
+# Scheme
+
+```
+$ racket -f {program}.scm
+```

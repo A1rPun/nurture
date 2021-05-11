@@ -9,6 +9,12 @@ $ python {program}.py
 $ python -c '{code}'
 ```
 
+### REPL
+
+```
+$ python
+```
+
 ### Shebang
 `#!/usr/bin/env python`
 ```

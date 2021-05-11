@@ -31,5 +31,5 @@ int fibTailRecursive(int n, int prevFib = 0, int fib = 1)
 int main(int argc, char** argv)
 {
   int input = argc > 1 ? atoi(argv[1]) : 29;
-  std::cout << fibLinear(input) << std::endl;
+  std::cout << fibTailRecursive(input) << std::endl;
 }
