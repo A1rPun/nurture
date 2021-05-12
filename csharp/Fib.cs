@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Fibonacci
 {
@@ -35,6 +36,25 @@ namespace Fibonacci
     static decimal FibTailRecursive(int n, decimal prevFib = 0, decimal fib = 1)
     {
       return n == 0 ? prevFib : FibTailRecursive(n - 1, fib, prevFib + fib);
+    }
+
+    static IEnumerable<decimal> FibGenerator(int n, decimal prevFib = 0, decimal fib = 1)
+    {
+      while (n-- >= 0)
+      {
+        yield return prevFib;
+        var temp = prevFib + fib;
+        prevFib = fib;
+        fib = temp;
+      }
+    }
+
+    static void FibGenerate(int n)
+    {
+      foreach(decimal x in FibGenerator(n))
+      {
+          Console.WriteLine(x);
+      }
     }
   }
 }

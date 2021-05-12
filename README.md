@@ -55,21 +55,23 @@ The simplest of programs. Mandatory test that has to be done before doing anythi
 It tests your ability to press the right sequence of buttons to produce something on the screen.
 The reward is a greeting to the world and possibly a working program.
 
-Syntax that can be learned, depending on the implementation:
+Syntax that can be learned, depending on the language or implementation:
 - Produce output
-- Use of String data structure
+- Use of String type
 - Create entry point for program
 
-As a added benefit you know how to compile/build and/or run a program.
+As an added benefit you know how to compile/build and/or run a program.
 
 ## [Fibonacci sequence](#Fibonacci)
 
 Although a simple sequence at first, one can learn much about a language by implementing a function that returns the Nth fibonacci number. A factorial function is also fun to implement.
 
-Syntax that can be learned, depending on the implementation:
+Syntax that can be learned, depending on the language or implementation:
 - Creating a function
 - Calling a function with parameters
+- Optional parameters
 - Reading (user) input
+- Type casting to other types
 - Returning result from a function
 - Produce pretty output
 - Create variables in memory
@@ -78,6 +80,7 @@ Syntax that can be learned, depending on the implementation:
 - Comparison operators
 - Use of recursion
 - Use of exponentiation
+- Use of rounding
 - Use of standard Math library
 
 **Test**
@@ -117,12 +120,13 @@ R | | yes float 64bit |
 Function name | Speed | Remarks
 --- | --- | ---
 Fib | Slow | Slow because of unoptimized recursion, but the best to read
-Fib linear | Quick | Imperative definition.
-Fib formula | Quickest | Binet's formula is precise till approximate 70th fib number because of floating-point arithmetic
-Fib tail recursive | Quicker | The best version in most languages. Easy to read
+Fib linear | Quick | Imperative definition
+Fib formula | Quicker | Binet's formula is precise till approximate 70th fib number because of floating-point arithmetic
+Fib tail recursive | Quicker | Optimized recursion. Easy to read
 Fib formal | Slow | Explicitly state all code paths. `F0 = 0`, `F1 = 1`, `Fn = Fn-1 + Fn-2`
-Fib memoization | Moderate | An optimized recursion. Hold a cache of return values for subsequent calls to the function.
 Fib list | Quick | Return a list from 0 to N
+Fib generator | Quicker | Generate the Nth number based on the amount of `next` calls (starting with 0)
+
 
 ## Todo
 - How to package in every language

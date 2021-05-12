@@ -17,11 +17,17 @@ def fibFormula(n):
 def fibTailRecursive(n, prevFib = 0, fib = 1):
   return prevFib if n == 0 else fibTailRecursive(n - 1, fib, prevFib + fib)
 
-input = (
-  int(sys.argv[1])
-  if len(sys.argv) > 1
-  else 29
-)
+def fibGenerator(n, prevFib = 0, fib = 1):
+  while n >= 0:
+    yield prevFib
+    prevFib, fib = fib, fib + prevFib
+    n -= 1
+
+def fibGenerate(n):
+  for x in fibGenerator(n):
+    print(x)
+
+input = (int(sys.argv[1]) if len(sys.argv) > 1 else 29)
 print(fibLinear(input))
 
 # Minified tail recursive

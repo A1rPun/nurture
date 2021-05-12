@@ -25,20 +25,17 @@ function fibTailRecursive($n, $prevFib = 0, $fib = 1)
     return $n === 0 ? $prevFib : fibTailRecursive($n - 1, $fib, $prevFib + $fib);
 }
 
-// TODO: WIP
 function fibGenerator($n, $prevFib = 0, $fib = 1)
 {
-    if ($n < 1) {
-        yield $n;
-        return;
-    }
-    yield $prevFib;
-    while ($n--) {
-        yield $fib;
+    while ($n-- >= 0) {
+        yield $prevFib;
         list($prevFib, $fib) = array($fib, $fib + $prevFib);
     }
 }
-// foreach (fibGenerator($input) as $fib) echo $fib.PHP_EOL;
+function fibGenerate($n)
+{
+    foreach (fibGenerator($n) as $fib) echo $fib.PHP_EOL;
+}
 
 $input = count($argv) > 1 ? $argv[1] : 29;
 echo(fibLinear($input).PHP_EOL);

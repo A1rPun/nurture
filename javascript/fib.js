@@ -9,20 +9,11 @@ function fibLinear(n, prevFib = 0, fib = 1) {
 }
 
 function fibFormula(n) {
-  return Math.round(((5 ** .5 + 1) / 2) ** n / 5 ** .5);
+  return Math.round(((5 ** 0.5 + 1) / 2) ** n / 5 ** 0.5);
 }
 
 function fibTailRecursive(n, prevFib = 0, fib = 1) {
   return n === 0 ? prevFib : fibTailRecursive(n - 1, fib, prevFib + fib);
-}
-
-function fibMemoization(n) {
-  if (!fibMemoization.cache) fibMemoization.cache = new Map([[0, 0], [1, 1]]);
-  const getFib = n =>
-    fibMemoization.cache.has(n)
-      ? fibMemoization.cache.get(n)
-      : getFib(n - 1) + getFib(n - 2);
-  return getFib(n);
 }
 
 function fibLinearBig(n, prevFib = 0n, fib = 1n) {
@@ -43,23 +34,16 @@ function fibFormal(n) {
   }
 }
 
-// TODO: WIP
 function* fibGenerator(n, prevFib = 0, fib = 1) {
-  if (n < 1) {
-    yield n;
-    return;
-  }
-  yield prevFib;
-  while (n--) {
-    yield fib;
+  while (n-- >= 0) {
+    yield prevFib;
     [prevFib, fib] = [fib, prevFib + fib];
   }
 }
+function fibGenerate(n) {
+  for (const x of fibGenerator(n)) console.log(x);
+}
 
-const input = (typeof process !== 'undefined' && process.argv[2]) || 29;
+const input = (typeof process !== "undefined" && process.argv[2]) || 29;
 console.log(`Fibonacci ${input}: ${fibLinear(input)}`);
-console.log(`Fibonacci ${input} BigInt: ${fibLinearBig(BigInt(input))}`); // https://github.com/tc39/proposal-bigint
-// for (let x of fibGenerator(input)) console.log(x);
-
-// Minified tail recursive
-// f=(a,b=0,c=1)=>a?f(a-1,c,b+c):b
+console.log(`Fibonacci ${input} BigInt: ${fibLinearBig(BigInt(input))}`);
