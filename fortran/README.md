@@ -1,9 +1,9 @@
 # Fortran
 
 - [Documentation](https://www.fortran90.org/)
-- [Learn Fortran in Y minutes](https://learnxinyminutes.com/docs/fortran/)
+- [Learn Fortran in Y minutes](https://learnxinyminutes.com/docs/fortran95/)
 
 ```
-$ gfortran {program}.f95 -o {program}
+$ gfortran -o {program} {program}.f95
 $ ./{program}
 ```

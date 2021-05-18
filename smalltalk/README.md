@@ -6,3 +6,9 @@
 ```
 $ gst -f {program}.st
 ```
+
+### REPL
+
+```
+$ gst
+```

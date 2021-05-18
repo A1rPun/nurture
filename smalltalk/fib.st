@@ -1,11 +1,35 @@
-"TODO: Read input from stdin"
-"TODO: Create method"
-n := 29.
-prevFib := 0.
-fib := 1.
-(n - 1) timesRepeat: [fib := prevFib + (prevFib := fib)].
-Transcript show: (fib asString); cr.
+Object subclass: Fibonacci [
+  fib: n
+  [
+    ^n < 2
+      ifTrue: [n]
+      ifFalse: [(self fib: n - 1) + (self fib: n - 2)].
+  ]
+  fibLinear: n
+  [
+    | prevFib fib |
+    prevFib := 0.
+    fib := 1.
+    (n - 1) timesRepeat: [fib := prevFib + (prevFib := fib)].
+    ^fib.
+  ]
+  fibFormula: n
+  [
+    ^((((((5 raisedTo: 0.5) + 1) / 2) raisedTo: n) / (5 raisedTo: 0.5)) rounded).
+  ]
+  fibTailAuxiliary: n prev: prevFib next: fib
+  [
+    ^n == 0
+      ifTrue: [prevFib]
+      ifFalse: [(self fibTailAuxiliary: n - 1 prev: fib next: prevFib + fib)].
+  ]
+  fibTailRecursive: n
+  [
+    ^(self fibTailAuxiliary: n prev: 0 next: 1).
+  ]
+]
 
-" ^self <= 2
-    ifTrue: [1]
-    ifFalse: [(self - 1) fibonacci + (self - 2) fibonacci] "
+"TODO: Read input from stdin"
+input := 29.
+result := (Fibonacci new) fibLinear: input.
+Transcript show: result asString; cr.

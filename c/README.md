@@ -12,9 +12,9 @@ $ make {program}
 $ ./{program}
 ```
 
-### Link a library (math.h for example)
+## Link a library
 
 ```
-$ gcc -o {output} {program}.c -lm
-$ ./{output}
+$ gcc -o fib fib.c -lm && ./fib
+$ gcc -o canvas canvas.c `pkg-config --cflags --libs gtk+-3.0` && ./canvas &
 ```
