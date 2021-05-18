@@ -1,5 +1,8 @@
 # C
 
+- [Documentation]()
+- [Learn C in Y minutes](https://learnxinyminutes.com/docs/c/)
+
 ```
 $ gcc -o {output} {program}.c
 $ ./{output}
