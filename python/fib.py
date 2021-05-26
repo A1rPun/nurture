@@ -17,6 +17,16 @@ def fibFormula(n):
 def fibTailRecursive(n, prevFib = 0, fib = 1):
   return prevFib if n == 0 else fibTailRecursive(n - 1, fib, prevFib + fib)
 
+def fibFastAuxiliary(n):
+  if n == 0: return (0, 1)
+  (prevFib, fib) = fibFastAuxiliary(n // 2)
+  c = prevFib * (fib * 2 - prevFib)
+  d = prevFib * prevFib + fib * fib
+  return (c, d) if n % 2 == 0 else (d, c + d)
+
+def fibFastDoubling(n):
+  return fibFastAuxiliary(n)[0]
+
 def fibGenerator(n, prevFib = 0, fib = 1):
   while n >= 0:
     yield prevFib
@@ -28,7 +38,4 @@ def fibGenerate(n):
     print(x)
 
 input = (int(sys.argv[1]) if len(sys.argv) > 1 else 29)
-print(fibLinear(input))
-
-# Minified tail recursive
-# def f(a, b = 0, c = 1): return f(a - 1, c, b + c) if a else b
+print(f"Fibonacci {input}: {fibFastDoubling(input)}")

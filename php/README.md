@@ -1,10 +1,14 @@
 # PHP
 
+- [Documentation](https://www.php.net/docs.php)
+- [Learn PHP in Y minutes](https://learnxinyminutes.com/docs/php/)
+
 ```
 $ php {program}.php
 ```
 
 ### One-liner
+
 ```
 $ php -r '{code}'
 ```
@@ -12,10 +16,13 @@ $ php -r '{code}'
 ### Debug
 
 Check php.ini location
+
 ```
 $ php --ini
 ```
+
 Check loaded drivers and other info
+
 ```
 $ php -m
 $ php -i   OR   php -r 'phpinfo();'
@@ -28,10 +35,13 @@ $ php -i   OR   php -r 'phpinfo();'
 ### Debug
 
 Displays the default config values defined by Symfony
+
 ```
 $ php bin/console config:dump-reference doctrine
 ```
+
 Displays the actual config values used by your application
+
 ```
 $ php bin/console debug:config doctrine
 ```
@@ -44,4 +54,3 @@ $ wget https://cs.symfony.com/download/php-cs-fixer-v2.phar -O php-cs-fixer
 $ sudo chmod a+x php-cs-fixer
 $ sudo mv php-cs-fixer /usr/local/bin/php-cs-fixer
 ```
-

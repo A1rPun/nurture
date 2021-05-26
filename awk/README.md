@@ -5,6 +5,7 @@
 
 ```
 $ awk -f {program}.awk
+$ awk --bignum -f {program}.awk
 ```
 
 ### One-liner

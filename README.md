@@ -88,44 +88,85 @@ Syntax that can be learned, depending on the language or implementation:
 fib(N)
 ```
 
-Nth number | Remarks
---- | ---
-`N = 0` | should return 0
-`N = 5` | should return 5
-`N = 13` | is the last safe 8bit integer
-`N = 24` | is the last safe 16bit integer
-`N = 47` | is the last safe 32bit integer
-`N = 78` | is the last safe double-precision 64bit integer (53bit)
-`N = 92` | is the last safe 64bit integer
-`N = 184` | is the last safe 32bit single-float
-`N = 1474` | is the last representable 64bit double-float
-`N = 1000000` | should not error
+- Test accuracy `N = 25`, `N = 50`, `N = 80`, `N = 100`
+- Test `fibTailRecursive` `N = 1000` for a stack overflow
+- Test speed for `fibLinear` `N = 1000000`
 
-- Test accuracy `N = 48`, `N = 78`, `N = 92`, `N = 100`
-- Test tail recursive computation `N = 1000` (can cause a stack overflow)
-- Speed `N = 1000000`
+Bits | Max num | Fib Limit | Remarks
+--- | --- | --- | ---
+1 | 1 | 2 | <3 no use
+signed 8 | -127 - 127 | 11 |
+unsigned 8 | 0 - 255 | 13 |
+signed 16 | -32767 - 32767 | 23 | |
+unsigned 16 | 0 - 65535 | 24 |
+signed 32 | -2147483647 - 2147483647 | 46 |
+unsigned 32 | 0 - 4294967295 | 47 |
+signed 53 | -9007199254740991 - 9007199254740991 | 78 |
+signed 64 | -9223372036854775807 - 9223372036854775807 | 92 |
+unsigned 64 | 0 - 18446744073709551615 | 93 |
+signed 128 | -(2^127-1) - 2^127-1 | 184 |
+unsigned 128 | 0 - 2^128-1 | 186 |
 
-Language | Integer overflow | Float overflow | Stack overflow | Speed (Algo)
---- | --- | --- | --- | ---
-Common Lisp | | yes float 64bit |
+Language | Integer/Float overflow | Stack overflow | Arbitrary-precision arithmetic
+--- | --- | --- | ---
+Ada | 32bit | not before integer overflow | no
+Assembly | | |
+Awk | `N > 1476` = +Inf | no | `--bignum` param
+C | | | |
+C# | | | |
+C++ | | | |
+COBOL | | | |
+Clojure | | | |
+Common Lisp | | yes float 64bit | |
+Crystal | | | |
+D | | | |
+Dart | | | |
+Elixir | | | |
 Erlang | | yes float 64bit |
-Haskell |  |
-JavaScript | BigInt | yes float 64bit |
+Erlang | | | |
+F# | | | |
+Fortran | | | |
+GO | | | | yes
+Groovy | | | |
+Haskell | | | |
+Java | | | |
+JavaScript | `2**53-1` = MAX_SAFE, 2**1024 = MAX_VALUE, `Infinity` | | yes
+Julia | | | |
+Kotlin | | | |
+Lolcode | | | |
+Lua | | | |
+Nim | | | |
+OCaml | | | |
+Octave | | | |
+OpenGL | | | |
 PHP | | yes float 64bit |
+Pascal | | | |
+Perl | | | |
 Python | | yes float 64bit |
 R | | yes float 64bit |
+Racket | | | |
+Ruby | | | |
+Rust | | | |
+Scala | | | |
+Smalltalk | | | |
+StandardML | | | |
+Swift | | | |
+VisualBasic | | | |
+WebAssembly | | | |
 
 **The fib file**
 
-Function name | Speed | Remarks
+Function name | Time complexity | Remarks
 --- | --- | ---
-Fib | Slow | Slow because of unoptimized recursion, but the best to read
-Fib linear | Quick | Imperative definition
-Fib formula | Quicker | Binet's formula is precise till approximate 70th fib number because of floating-point arithmetic
-Fib tail recursive | Quicker | Optimized recursion. Easy to read
-Fib formal | Slow | Explicitly state all code paths. `F0 = 0`, `F1 = 1`, `Fn = Fn-1 + Fn-2`
-Fib list | Quick | Return a list from 0 to N
-Fib generator | Quicker | Generate the Nth number based on the amount of `next` calls (starting with 0)
+Fib | O(n^n) | Slow because of unoptimized recursion, but the best to read
+Fib linear | O(n) | Imperative definition, ok to read
+Fib formula | O(1) | Binet's formula is precise till approximate 70th fib number because of floating-point arithmetic
+Fib tail recursive | O(n) | Optimized recursion. Easy to read
+Fib formal | O(n^n) | Explicitly state all code paths. `F0 = 0`, `F1 = 1`, `Fn = Fn-1 + Fn-2`
+Fib list | O(n) | Return a list from 0 to N
+Fib generator | O(n) | Generate the Nth number based on the amount of `next` calls (starting with 0)
+Fib fast doubling | O(log n) | Precise and fast implementation, kind of readable
+
 
 
 ## Todo

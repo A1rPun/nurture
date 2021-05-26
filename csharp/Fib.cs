@@ -8,7 +8,8 @@ namespace Fibonacci
     public static void Main(string[] args)
     {
       var input = args.Length > 0 ? int.Parse(args[0]) : 29;
-      Console.WriteLine(FibLinear(input));
+      var result = FibFastDoubling(input);
+      Console.WriteLine(String.Format("Fibonacci {0}: {1}", input, result));
     }
 
     static decimal Fib(int n)
@@ -38,6 +39,22 @@ namespace Fibonacci
       return n == 0 ? prevFib : FibTailRecursive(n - 1, fib, prevFib + fib);
     }
 
+    static Tuple<decimal, decimal> FibFastAuxiliary(decimal n)
+    {
+      if (n == 0) return new Tuple<decimal, decimal>(0, 1); // BigInteger.Zero, BigInteger.One;
+      var fibs = FibFastAuxiliary(Math.Floor(n / 2));
+      var prevFib = fibs.Item1;
+      var fib = fibs.Item2;
+      var c = prevFib * (fib * 2 - prevFib);
+      var d = prevFib * prevFib + fib * fib;
+      return n % 2 == 0 ? new Tuple<decimal, decimal>(c, d) : new Tuple<decimal, decimal>(d, c + d);
+    }
+
+    static decimal FibFastDoubling(int n)
+    {
+      return FibFastAuxiliary((decimal)n).Item1;
+    }
+
     static IEnumerable<decimal> FibGenerator(int n, decimal prevFib = 0, decimal fib = 1)
     {
       while (n-- >= 0)
@@ -51,9 +68,9 @@ namespace Fibonacci
 
     static void FibGenerate(int n)
     {
-      foreach(decimal x in FibGenerator(n))
+      foreach (decimal x in FibGenerator(n))
       {
-          Console.WriteLine(x);
+        Console.WriteLine(x);
       }
     }
   }

@@ -10,7 +10,7 @@ function fibLinear($n, $prevFib = 0, $fib = 1)
         return $n;
     }
     while (--$n) {
-        list($prevFib, $fib) = array($fib, $fib + $prevFib);
+        [$prevFib, $fib] = [$fib, $fib + $prevFib];
     }
     return $fib;
 }
@@ -25,11 +25,26 @@ function fibTailRecursive($n, $prevFib = 0, $fib = 1)
     return $n === 0 ? $prevFib : fibTailRecursive($n - 1, $fib, $prevFib + $fib);
 }
 
+function fibFastAuxiliary($n)
+{
+    if ($n == 0) {
+        return [0, 1];
+    }
+    [$prevFib, $fib] = fibFastAuxiliary(floor($n / 2));
+    $c = $prevFib * ($fib * 2 - $prevFib);
+    $d = $prevFib * $prevFib + $fib * $fib;
+    return $n % 2 == 0 ? [$c, $d] : [$d, $c + $d];
+}
+function fibFastDoubling($n)
+{
+    return fibFastAuxiliary($n)[0];
+}
+
 function fibGenerator($n, $prevFib = 0, $fib = 1)
 {
     while ($n-- >= 0) {
         yield $prevFib;
-        list($prevFib, $fib) = array($fib, $fib + $prevFib);
+        [$prevFib, $fib] = [$fib, $fib + $prevFib];
     }
 }
 function fibGenerate($n)
@@ -38,4 +53,4 @@ function fibGenerate($n)
 }
 
 $input = count($argv) > 1 ? $argv[1] : 29;
-echo(fibLinear($input).PHP_EOL);
+printf("Fibonacci %d: %d".PHP_EOL, $input, fibFastDoubling($input));
