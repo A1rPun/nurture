@@ -1,5 +1,9 @@
 # OCaml
 
+- [Documentation](https://www.ocaml.org/docs/)
+- [Learn OCaml in Y minutes](https://learnxinyminutes.com/docs/ocaml/)
+
+
 ```
 $ ocaml {program}.ml
 ```
@@ -7,6 +11,6 @@ $ ocaml {program}.ml
 ## Compile
 
 ```
-$ ocamlc {program}.ml -o {program}
+$ ocamlc -o {program} {program}.ml
 $ ./{program}
 ```

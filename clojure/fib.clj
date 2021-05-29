@@ -15,7 +15,6 @@
     (fib-tail-recursive (- n 1) fib (+ prev-fib fib)))))
 
 (defn fib-formal [n]
-  "An explicit definition of the recursive nature"
   (cond
     (= n 0) 0
     (= n 1) 1

@@ -22,7 +22,6 @@ let rec fibTailRecursive n: bigint =
     | _ -> (fibTailAuxiliary (n - 1) fib (prevFib + fib))
   fibTailAuxiliary n 0I 1I
 
-// An explicit definition of the recursive nature
 let rec fibFormal n: bigint =
   match n with
   | 0 -> 0I

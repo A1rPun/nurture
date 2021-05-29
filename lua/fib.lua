@@ -1,6 +1,5 @@
 function fib(n)
-  if n < 2 then return n end
-  return fib(n - 1) + fib(n - 2)
+  return n < 2 and n or fib(n - 1) + fib(n - 2)
 end
 
 function fibLinear(n)
@@ -20,8 +19,7 @@ function fibFormula(n)
 end
 
 function fibTailAuxiliary(n, prevFib, fib)
-  if n == 0 then return prevFib end
-  return fibTailAuxiliary(n - 1, fib, prevFib + fib)
+  return n == 0 and prevFib or fibTailAuxiliary(n - 1, fib, prevFib + fib)
 end
 function fibTailRecursive(n, prevFib, fib)
   return fibTailAuxiliary(n, 0, 1)

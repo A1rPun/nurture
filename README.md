@@ -16,7 +16,7 @@ Other directories:
 ## [Binary size comparison](#binary-size-comparison)
 
 Here is an overview that compares the **helloworld** binary for compiled languages in bytes using the default build command on the CLI. Only explored languages with a compiler are included.
-These binaries are build on [`Arch Linux x86_64 5.2.11-arch1-1-ARCH`](https://wiki.archlinux.org/index.php/Programming_languages).
+These binaries are build on `Arch Linux x86_64 5.2.11-arch1-1-ARCH`.
 
 Language<br>(compiler) | Binary size<br>in bytes | Binary type<br>on Linux | Runtime<br>dependency
 --- | ---: | --- | ---
@@ -174,3 +174,9 @@ Fib fast doubling | O(log n) | Precise and fast implementation, kind of readable
 - How to debug without proprietary software
 - Memory usage comparison in helloworld
 - Fibonacci algo comparison (type limitations, stack overflows)
+
+## Sources
+
+- [Metaprogramming](https://en.wikipedia.org/wiki/Metaprogramming)
+- [Arch languages](https://wiki.archlinux.org/index.php/Programming_languages)
+- [Termux languages](https://wiki.termux.com/wiki/Development_Environments)

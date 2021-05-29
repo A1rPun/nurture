@@ -14,7 +14,6 @@ tail_recursive(N) -> tail_recursive(N, 0, 1).
 tail_recursive(0, PrevFib, _) -> PrevFib;
 tail_recursive(N, PrevFib, Fib) -> tail_recursive(N - 1, Fib, PrevFib + Fib).
 
-% An explicit definition of the recursive nature
 formal(0) -> 0;
 formal(1) -> 1;
 formal(N) -> formal(N - 1) + formal(N - 2).

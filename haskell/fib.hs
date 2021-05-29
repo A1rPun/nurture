@@ -30,7 +30,6 @@ main = do
 -- Functions below are inspired by
 -- https://wiki.haskell.org/The_Fibonacci_sequence
 
--- An explicit definition of the recursive nature
 fibFormal :: Integer -> Integer
 fibFormal 0 = 0
 fibFormal 1 = 1

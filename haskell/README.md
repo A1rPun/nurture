@@ -4,7 +4,7 @@
 - [Learn Haskell in Y minutes](https://learnxinyminutes.com/docs/haskell/)
 
 ```
-$ ghc {program}.hs -o {program}
+$ ghc -o {program} {program}.hs
 $ ./{program}
 ```
 *Use `ghc -dynamic` when `ghc-static` is not installed*
