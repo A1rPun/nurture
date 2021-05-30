@@ -16,7 +16,7 @@
       ((zerop n) prev-fib)))
 
 (defun fib-tail-recursive (n &optional (prev-fib 0) (fib 1))
-  (if (= n 0)
+  (if (zerop n)
     prev-fib
     (fib-tail-recursive (- n 1) fib (+ prev-fib fib))))
 
@@ -40,9 +40,18 @@
       (reverse acc)
       (fib-list (1- n) (cons (reduce #'+ (subseq acc 0 2)) acc))))
 
+;; with help from @bklaase
+(defun fib-fast-doubling (n)
+  (if (zerop n)
+  (values 0 1)
+  (multiple-value-bind (prevFib fib)
+      (fib-fast-doubling (floor (/ n 2)))
+    (let ((a (* prevFib (- (* fib 2) prevFib)))
+          (b (+ (* prevFib prevFib) (* fib fib))))
+         (if (zerop (mod n 2)) (values a b) (values b (+ a b)))))))
+
 (handler-case
   (let ((nthfib (parse-integer (cadr sb-ext:*posix-argv*))))
-    (time (format t "Fib number ~a: ~a~%~%" nthfib (fib-tail-recursive nthfib))))
+    (time (format t "Fib number ~a: ~a~%~%" nthfib (fib-fast-doubling nthfib))))
   (error (c)
-    (format t "Please enter a natural number or 0.~%")
-    (values 0 c)))
+    (format t "Please enter a number.~%~a~%" c)))
