@@ -2,6 +2,7 @@
 
 - [Documentation](https://www.gnu.org/software/gawk/manual/gawk.html)
 - [Learn AWK in Y minutes](https://learnxinyminutes.com/docs/awk/)
+- Indices start at 1
 
 ```
 $ awk -f {program}.awk

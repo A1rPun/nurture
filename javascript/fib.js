@@ -56,7 +56,7 @@ function fibGenerate(n) {
   for (const x of fibGenerator(n)) console.log(x);
 }
 
-const pedanticFib = fn => n => n < 0n ? -fn(n * -1n) : fn(n); // TODO: Check n is really a number
+const pedanticFib = fn => n => /^-?\d+$/.test(n) ? (n < 0n ? -fn(n * -1n) : fn(n)) : 0;
 const input = (typeof process !== "undefined" && process.argv[2]) || 29;
 const result = pedanticFib(fibFastDoubling)(BigInt(input));
 console.log(`Fibonacci ${input}: ${result}`);

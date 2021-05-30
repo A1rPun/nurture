@@ -13,9 +13,12 @@ function fibLinear(n)
   return fib
 end
 
-function dirtyRound(x) return math.floor(x + .5) end -- TODO: Properly round a float
+function round(float)
+  local int, part = math.modf(float)
+  return float == math.abs(float) and part >= .5 and int+1 or part <= -.5 and int-1 or int
+end
 function fibFormula(n)
-  return dirtyRound(((5 ^ .5 + 1) / 2) ^ n / 5 ^ .5)
+  return round(((5 ^ .5 + 1) / 2) ^ n / 5 ^ .5)
 end
 
 function fibTailAuxiliary(n, prevFib, fib)
@@ -25,4 +28,17 @@ function fibTailRecursive(n, prevFib, fib)
   return fibTailAuxiliary(n, 0, 1)
 end
 
-print(fibLinear(29))
+function fibFastAuxiliary(n)
+  if n == 0 then return {0, 1} end
+  local result = fibFastAuxiliary(math.floor(n / 2))
+  local prevFib, fib = result[1], result[2]
+  local c = prevFib * (fib * 2 - prevFib)
+  local d = prevFib * prevFib + fib * fib
+  return n % 2 == 0 and {c, d} or {d, c + d}
+end
+function fibFastDoubling(n)
+  return fibFastAuxiliary(n)[1]
+end
+
+input = #arg > 0 and tonumber(arg[1]) or 29
+print(string.format("Fibonacci %d: %d", input, fibFastDoubling(input)))

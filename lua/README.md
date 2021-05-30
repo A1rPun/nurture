@@ -2,6 +2,7 @@
 
 - [Documentation](http://www.lua.org/manual/5.1/index.html)
 - [Learn Lua in Y minutes](https://learnxinyminutes.com/docs/lua/)
+- Indices start at 1
 
 ```
 $ lua {program}.lua

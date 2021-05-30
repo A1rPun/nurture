@@ -29,7 +29,9 @@ Object subclass: Fibonacci [
   ]
 ]
 
-"TODO: Read input from stdin"
-input := 29.
+| input result |
+input := Smalltalk getArgc > 1
+  ifTrue: [(Smalltalk getArgv: 2) asNumber]
+  ifFalse: [29].
 result := (Fibonacci new) fibLinear: input.
 Transcript show: result asString; cr.

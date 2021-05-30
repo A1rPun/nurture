@@ -172,8 +172,6 @@ Fib fast doubling | O(log n) | Precise and fast implementation, kind of readable
 ## Todo
 - How to package in every language
 - How to debug without proprietary software
-- Memory usage comparison in helloworld
-- Fibonacci algo comparison (type limitations, stack overflows)
 
 ## Sources
 
