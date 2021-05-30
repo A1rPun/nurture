@@ -15,6 +15,7 @@ CL-USER> {code}
 ```
 
 Or
+
 ```
 $ sbcl
 
@@ -22,10 +23,12 @@ $ sbcl
 ```
 
 ### One-liner
+
 ```
 sbcl --non-interactive --eval '{code}'
 ```
-*`--non-interactive` means no REPL*
+
+_`--non-interactive` means no REPL_
 
 ## Compile
 
@@ -37,12 +40,32 @@ $ ./{program}.fasl
 
 ## Example
 
+```
 CL-USER> (+ .5 (* .5 (expt 5 .5)))
 1.618034
 CL-USER> (+ (/ (sqrt 5) 2) .5)
 1.618034
 CL-USER> (/ (+ (sqrt 5) 1) 2)
 1.618034
+```
+
+## Packages
+
+- [Use package](https://github.com/jwiegley/use-package)
+
+```
+(package-initialize)
+;(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(eval-when-compile (require 'use-package))
+;; usepackage is installed
+```
 
 # Information
 

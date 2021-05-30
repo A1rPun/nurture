@@ -20,9 +20,9 @@ def fibTailRecursive(n, prevFib = 0, fib = 1):
 def fibFastAuxiliary(n):
   if n == 0: return (0, 1)
   (prevFib, fib) = fibFastAuxiliary(n // 2)
-  c = prevFib * (fib * 2 - prevFib)
-  d = prevFib * prevFib + fib * fib
-  return (c, d) if n % 2 == 0 else (d, c + d)
+  a = prevFib * (fib * 2 - prevFib)
+  b = prevFib * prevFib + fib * fib
+  return (a, b) if n % 2 == 0 else (b, a + b)
 
 def fibFastDoubling(n):
   return fibFastAuxiliary(n)[0]

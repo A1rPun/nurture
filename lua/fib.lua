@@ -30,11 +30,11 @@ end
 
 function fibFastAuxiliary(n)
   if n == 0 then return {0, 1} end
-  local result = fibFastAuxiliary(math.floor(n / 2))
-  local prevFib, fib = result[1], result[2]
-  local c = prevFib * (fib * 2 - prevFib)
-  local d = prevFib * prevFib + fib * fib
-  return n % 2 == 0 and {c, d} or {d, c + d}
+  local fibs = fibFastAuxiliary(math.floor(n / 2))
+  local prevFib, fib = fibs[1], fibs[2]
+  local a = prevFib * (fib * 2 - prevFib)
+  local b = prevFib * prevFib + fib * fib
+  return n % 2 == 0 and {a, b} or {b, a + b}
 end
 function fibFastDoubling(n)
   return fibFastAuxiliary(n)[1]

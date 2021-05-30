@@ -39,15 +39,17 @@ namespace Fibonacci
       return n == 0 ? prevFib : FibTailRecursive(n - 1, fib, prevFib + fib);
     }
 
-    static Tuple<decimal, decimal> FibFastAuxiliary(decimal n)
+    private static Tuple<decimal, decimal> FibFastAuxiliary(decimal n)
     {
       if (n == 0) return new Tuple<decimal, decimal>(0, 1); // BigInteger.Zero, BigInteger.One;
       var fibs = FibFastAuxiliary(Math.Floor(n / 2));
       var prevFib = fibs.Item1;
       var fib = fibs.Item2;
-      var c = prevFib * (fib * 2 - prevFib);
-      var d = prevFib * prevFib + fib * fib;
-      return n % 2 == 0 ? new Tuple<decimal, decimal>(c, d) : new Tuple<decimal, decimal>(d, c + d);
+      var a = prevFib * (fib * 2 - prevFib);
+      var b = prevFib * prevFib + fib * fib;
+      return n % 2 == 0
+        ? new Tuple<decimal, decimal>(a, b)
+        : new Tuple<decimal, decimal>(b, a + b);
     }
 
     static decimal FibFastDoubling(int n)

@@ -25,18 +25,18 @@ function fibTailRecursive($n, $prevFib = 0, $fib = 1)
     return $n === 0 ? $prevFib : fibTailRecursive($n - 1, $fib, $prevFib + $fib);
 }
 
-function fibFastAuxiliary($n)
-{
-    if ($n == 0) {
-        return [0, 1];
-    }
-    [$prevFib, $fib] = fibFastAuxiliary(floor($n / 2));
-    $c = $prevFib * ($fib * 2 - $prevFib);
-    $d = $prevFib * $prevFib + $fib * $fib;
-    return $n % 2 == 0 ? [$c, $d] : [$d, $c + $d];
-}
 function fibFastDoubling($n)
 {
+    function fibFastAuxiliary($n)
+    {
+        if ($n == 0) {
+            return [0, 1];
+        }
+        [$prevFib, $fib] = fibFastAuxiliary(floor($n / 2));
+        $a = $prevFib * ($fib * 2 - $prevFib);
+        $b = $prevFib * $prevFib + $fib * $fib;
+        return $n % 2 == 0 ? [$a, $b] : [$b, $a + $b];
+    }
     return fibFastAuxiliary($n)[0];
 }
 

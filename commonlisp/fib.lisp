@@ -48,10 +48,12 @@
       (fib-fast-doubling (floor (/ n 2)))
     (let ((a (* prevFib (- (* fib 2) prevFib)))
           (b (+ (* prevFib prevFib) (* fib fib))))
-         (if (zerop (mod n 2)) (values a b) (values b (+ a b)))))))
+        (if (zerop (mod n 2))
+          (values a b)
+          (values b (+ a b)))))))
 
 (handler-case
   (let ((nthfib (parse-integer (cadr sb-ext:*posix-argv*))))
-    (time (format t "Fib number ~a: ~a~%~%" nthfib (fib-fast-doubling nthfib))))
+    (format t "Fibonacci ~a: ~a~%" nthfib (fib-fast-doubling nthfib)))
   (error (c)
     (format t "Please enter a number.~%~a~%" c)))

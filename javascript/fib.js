@@ -18,14 +18,14 @@ function fibTailRecursive(n, prevFib = 0, fib = 1) {
   return n === 0 ? prevFib : fibTailRecursive(n - 1, fib, prevFib + fib);
 }
 
-function fibFastAuxiliary(n) {
-  if (n === 0n) return [0n, 1n];
-  const [prevFib, fib] = fibFastAuxiliary((n / 2n) | 0n);
-  const c = prevFib * (fib * 2n - prevFib);
-  const d = prevFib * prevFib + fib * fib;
-  return n % 2n === 0n ? [c, d] : [d, c + d];
-}
 function fibFastDoubling(n) {
+  function fibFastAuxiliary(n) {
+    if (n === 0n) return [0n, 1n];
+    const [prevFib, fib] = fibFastAuxiliary((n / 2n) | 0n);
+    const a = prevFib * (fib * 2n - prevFib);
+    const b = prevFib * prevFib + fib * fib;
+    return n % 2n === 0n ? [a, b] : [b, a + b];
+  }
   return fibFastAuxiliary(n)[0];
 }
 
