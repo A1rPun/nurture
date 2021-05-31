@@ -13,28 +13,24 @@ fibPattern n
 fibTailRecursive :: Integer -> Integer
 fibTailRecursive n = fibTailAuxiliary n 0 1
   where fibTailAuxiliary :: Integer -> Integer -> Integer -> Integer
-        fibTailAuxiliary n prevFib fib
-          | n == 0 = prevFib
-          | otherwise = fibTailAuxiliary (n - 1) fib (prevFib + fib)
+        fibTailAuxiliary 0 prevFib _ = prevFib
+        fibTailAuxiliary n prevFib fib =
+          fibTailAuxiliary (n - 1) fib (prevFib + fib)
 
 fibFormula :: Double -> Integer
 fibFormula n = round (((5 ** 0.5 + 1) / 2) ** n / 5 ** 0.5)
 
 fibFastDoubling :: Integer -> Integer
-fibFastDoubling n = fibFastAuxiliary n !! 0
-  where fibFastAuxiliary :: Integer -> [Integer]
-        fibFastAuxiliary n
-          | n == 0 = [0, 1]
-          | otherwise = do
-            let [prevFib, fib] = fibFastAuxiliary (n `div` 2)
+fibFastDoubling n = fst (fibFastAuxiliary n)
+  where fibFastAuxiliary :: Integer -> (Integer, Integer)
+        fibFastAuxiliary 0 = (0, 1)
+        fibFastAuxiliary n = do
+            let (prevFib, fib) = fibFastAuxiliary (n `div` 2)
             let a = prevFib * (fib * 2 - prevFib)
             let b = prevFib * prevFib + fib * fib
             if n `mod` 2 == 0
-              then [a, b]
-              else [b, a + b]
-
--- Functions below are inspired by
--- https://wiki.haskell.org/The_Fibonacci_sequence
+              then (a, b)
+              else (b, a + b)
 
 fibFormal :: Integer -> Integer
 fibFormal 0 = 0
@@ -53,8 +49,6 @@ fibBinet n = round $ phi ** fromIntegral n / sq5
   where
     sq5 = sqrt 5 :: Double
     phi = (1 + sq5) / 2
-
--- --
 
 main :: IO ()
 main = do

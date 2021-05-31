@@ -8,8 +8,6 @@ You start in normal mode
 `i` = Insert mode
 `v` = Visual mode
 `A` = Insert mode at end of line
-`:options` = Show vim options
-`:h` = Show vim help
 `ctrl+d` = List autocompletions
 
 ## File commands
@@ -46,5 +44,9 @@ You start in normal mode
 
 ## Useful commands
 
+`:options` = Show vim options
+`:h` = Show vim help
+`:find` = find a file to open
+`:read !` = read stdout from command
 `:%!xxd` = hex view and edit
 `:%!xxd -r` = parse hex back to a file

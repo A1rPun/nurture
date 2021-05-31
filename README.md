@@ -177,3 +177,12 @@ Fib fast doubling | O(log n) | Precise and fast implementation, kind of readable
 - [Meta Programming](https://en.wikipedia.org/wiki/Metaprogramming)
 - [Arch languages](https://wiki.archlinux.org/index.php/Programming_languages)
 - [Termux languages](https://wiki.termux.com/wiki/Development_Environments)
+
+### Fib sources
+
+- [0](rosettacode.org/wiki/Fibonacci_sequence)
+- [1](https://www.scriptol.com/programming/fibonacci.php)
+- [1](https://www.nayuki.io/page/fast-fibonacci-algorithms)
+- [2] (https://wiki.haskell.org/The_Fibonacci_sequence)
+- [3](https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/)
+- [5](https://gist.github.com/t-nissie/641df996b9035f85b230)
