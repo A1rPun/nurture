@@ -1,4 +1,6 @@
-function main(wasm) {
+import returnResponse from "./webassembly.js";
+
+returnResponse("helloworld.wasm", (wasm) => {
   const memory = wasm.exports.memory;
   const length = wasm.exports.length;
   const position = wasm.exports.position;
@@ -8,10 +10,4 @@ function main(wasm) {
 
   console.log(s);
   document.write(s);
-}
-
-fetch("helloworld.wasm")
-  .then((reponse) => reponse.arrayBuffer())
-  .then((bytes) => WebAssembly.instantiate(bytes, {}))
-  .then((result) => result.instance)
-  .then(main);
+});
