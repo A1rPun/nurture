@@ -167,14 +167,13 @@ Fib list | O(n) | Return a list from 0 to N
 Fib generator | O(n) | Generate the Nth number based on the amount of `next` calls (starting with 0)
 Fib fast doubling | O(log n) | Precise and fast implementation, kind of readable
 
-
-
 ## Todo
 - How to package in every language
 - How to debug without proprietary software
 
 ## Sources
 
-- [Metaprogramming](https://en.wikipedia.org/wiki/Metaprogramming)
+- [Programming Language Comparison](https://en.wikipedia.org/wiki/Comparison_of_programming_languages)
+- [Meta Programming](https://en.wikipedia.org/wiki/Metaprogramming)
 - [Arch languages](https://wiki.archlinux.org/index.php/Programming_languages)
 - [Termux languages](https://wiki.termux.com/wiki/Development_Environments)
