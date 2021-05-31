@@ -7,6 +7,9 @@ program Fibonacci;
 
 uses math, sysutils;
 
+type
+  Int64Array = array of Int64;
+
 function fib(n: Int64): Int64;
 begin
   if n < 2
@@ -40,10 +43,36 @@ begin
   else fibTailRecursive := fibTailRecursive(n - 1, fib, prevFib + fib);
 end;
 
+function fibFastDoubling(n: Int64): Int64;
+  function fibFastAuxiliary(n: Int64): Int64Array;
+  var
+    fibs: Int64Array;
+    prevFib, fib, a, b: Int64;
+  begin
+    if n = 0
+    then begin
+      fibFastAuxiliary := [0, 1];
+      exit;
+    end;
+
+    fibs := fibFastAuxiliary(floor(n / 2));
+    prevFib := fibs[0];
+    fib := fibs[1];
+    a := prevFib * (fib * 2 - prevFib);
+    b := prevFib * prevFib + fib * fib;
+
+    if n mod 2 = 0
+    then fibFastAuxiliary := [a, b]
+    else fibFastAuxiliary := [b, a + b];
+  end;
+begin
+  fibFastDoubling := fibFastAuxiliary(n)[0];
+end;
+
 var input: Int64;
 begin
   if ParamCount > 0
   then input := StrToInt(ParamStr(1))
   else input := 29;
-  WriteLn(IntToStr(fibLinear(input)));
+  WriteLn(IntToStr(fibFastDoubling(input)));
 end.

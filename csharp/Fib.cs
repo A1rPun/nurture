@@ -43,10 +43,8 @@ namespace Fibonacci
     {
       if (n == 0) return new Tuple<decimal, decimal>(0, 1); // BigInteger.Zero, BigInteger.One;
       var fibs = FibFastAuxiliary(Math.Floor(n / 2));
-      var prevFib = fibs.Item1;
-      var fib = fibs.Item2;
-      var a = prevFib * (fib * 2 - prevFib);
-      var b = prevFib * prevFib + fib * fib;
+      var a = fibs.Item1 * (fibs.Item2 * 2 - fibs.Item1);
+      var b = fibs.Item1 * fibs.Item1 + fibs.Item2 * fibs.Item2;
       return n % 2 == 0
         ? new Tuple<decimal, decimal>(a, b)
         : new Tuple<decimal, decimal>(b, a + b);

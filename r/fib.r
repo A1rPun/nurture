@@ -21,6 +21,20 @@ fibTailRecursive <- function(n, prevFib = 0, fib = 1) {
   if (n == 0) prevFib else Recall(n - 1, fib, prevFib + fib)
 }
 
+fibFastDoubling <- function(n) {
+  fibFastAuxiliary <- function(n) {
+    if (n == 0) return(list(0, 1))
+
+    fibs <- Recall(floor(n / 2))
+    prevFib <- fibs[[1]]
+    fib <- fibs[[2]]
+    a <- prevFib * (fib * 2 - prevFib)
+    b <- prevFib * prevFib + fib * fib
+    if (n %% 2 == 0) list(a, b) else list(b, a + b)
+  }
+  fibFastAuxiliary(n)[[1]];
+}
+
 args = commandArgs(trailingOnly=TRUE)
 input = if (length(args) > 0) as.numeric(args[1]) else 29
-print(fibFormula(input))
+print(fibFastDoubling(input))

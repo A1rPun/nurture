@@ -28,8 +28,22 @@ int fibTailRecursive(int n, int prevFib = 0, int fib = 1)
   return n == 0 ? prevFib : fibTailRecursive(n - 1, fib, prevFib + fib);
 }
 
+int* fibFastAuxiliary(int n) {
+  if (n == 0) return new int[2]{0, 1};
+  int* fibs = fibFastAuxiliary(floor(n / 2));
+  int prevFib = fibs[0];
+  int fib = fibs[1];
+  int a = prevFib * (fib * 2 - prevFib);
+  int b = prevFib * prevFib + fib * fib;
+  return n % 2 == 0 ? new int[2]{a, b} : new int[2]{b, a + b};
+}
+
+int fibFastDoubling(int n) {
+  return fibFastAuxiliary(n)[0];
+}
+
 int main(int argc, char** argv)
 {
   int input = argc > 1 ? atoi(argv[1]) : 29;
-  std::cout << fibTailRecursive(input) << std::endl;
+  std::cout << fibFastDoubling(input) << std::endl;
 }
