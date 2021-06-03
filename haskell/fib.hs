@@ -50,8 +50,11 @@ fibBinet n = round $ phi ** fromIntegral n / sq5
     sq5 = sqrt 5 :: Double
     phi = (1 + sq5) / 2
 
+fibPedantic :: Integer -> Integer
+fibPedantic n = if n < 0 then - fibFastDoubling (abs n) else fibFastDoubling n
+
 main :: IO ()
 main = do
   args <- getArgs
   let input = if length args > 0 then read $ head args else 29
-  printf "Fibonacci %d: %d\n" input (fibFastDoubling input)
+  printf "Fibonacci %d: %d\n" input (fibPedantic input)

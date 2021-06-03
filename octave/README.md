@@ -4,7 +4,7 @@
 - Indices start at 1
 
 ```
-$ octave {program}
+$ octave {program}.m
 ```
 
 ## REPL
