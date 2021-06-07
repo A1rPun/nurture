@@ -2,7 +2,8 @@
 
 ```
 $ vbnc {program}.vb
-$ mono {program}.exe
+$ chmod +x {program}.exe
+$ ./{program}.exe
 ```
 
 ## Development requirements

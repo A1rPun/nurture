@@ -2,7 +2,7 @@
 
 ```
 $ mcs {program}.cs
-$ mono {program}.exe
+$ ./{program}.exe
 ```
 
 ## Development requirements

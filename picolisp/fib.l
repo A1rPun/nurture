@@ -19,16 +19,16 @@
 (de fib-tail-recursive (n)
   (fib-tail-auxiliary n 0 1) )
 
-(de fib-formula (n)
-  (round (/ (** (/ (+ (** 5 0.5) 1) 2) n) (** 5 0.5))))
+#(de fib-formula (n)
+#  (round (/ (** (/ (+ (** 5 0.5) 1) 2) n) (** 5 0.5))))
 
-(de fib-formal (n)
-  (cond
-    ((= n 0) 0)
-    ((= n 1) 1)
-    (+ (fib-formal (- n 1)) (fib-formal (- n 2))) ) )
+#(de fib-formal (n)
+#  (cond
+#    ((= n 0) 0)
+#    ((= n 1) 1)
+#    (+ (fib-formal (- n 1)) (fib-formal (- n 2))) ) )
 
 (argv input)
 (setq input (if (not input) 29 (format input)))
-(prinl (fib-formula input))
+(prinl (fib-linear input))
 (bye)

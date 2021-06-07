@@ -1,8 +1,8 @@
 # Assembly
 
 ```
-$ as {program}.s -o {program}.o
-$ ld {program}.o -o {program} -e {function}
+$ as -o {program}.o {program}.s
+$ ld -o {program} -e {function} {program}.o
 $ ./{program}
 ```
 
