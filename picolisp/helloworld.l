@@ -1,0 +1,2 @@
+(prinl "Hello world!")
+(bye)
