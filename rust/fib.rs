@@ -1,5 +1,6 @@
 use std::env;
 
+#[allow(dead_code)]
 fn fib(n: usize) -> usize {
   if n < 2 {
     n
@@ -8,6 +9,7 @@ fn fib(n: usize) -> usize {
   }
 }
 
+#[allow(dead_code)]
 fn fib_pattern(n: usize) -> usize {
   match n {
     0 => 0,
@@ -16,6 +18,7 @@ fn fib_pattern(n: usize) -> usize {
   }
 }
 
+#[allow(dead_code)]
 fn fib_tail_recursive(n: usize) -> usize {
   fn fib_tail_auxiliary(n: usize, prev_fib: usize, fib: usize) -> usize {
     match n {
@@ -26,6 +29,7 @@ fn fib_tail_recursive(n: usize) -> usize {
   fib_tail_auxiliary(n, 0, 1)
 }
 
+#[allow(dead_code)]
 fn fib_linear(mut n: usize) -> usize {
   if n < 2 {
     n
@@ -40,6 +44,13 @@ fn fib_linear(mut n: usize) -> usize {
     }
     fib
   }
+}
+
+#[allow(dead_code)]
+fn fib_formula(n: usize) -> f32 {
+  let root = 5_f32.sqrt();
+  let phi = (1.0 + root) / 2.0;
+  (phi.powi(n as i32) / root).round()
 }
 
 fn main() {
