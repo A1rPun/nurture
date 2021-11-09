@@ -1,5 +1,13 @@
 # Vim
 
+## Modifiers
+
+`^` = Ctrl key
+shift = The described character is capitalized
+`%` = select whole file
+`/` = start search
+`!` = filter, ...
+
 ## Modes
 
 You start in normal mode
@@ -8,7 +16,6 @@ You start in normal mode
 `i` = Insert mode
 `v` = Visual mode
 `A` = Insert mode at end of line
-`ctrl+d` = List autocompletions
 
 ## File commands
 
@@ -29,9 +36,6 @@ You start in normal mode
 `W E B` = WORD navigation (forward begin, forward end, back begin)
 `{ }` = Paragraph navigation
 `[{ ]}` = Block navigation
-`%` = select whole file
-`!` = filter
-`/` = start search
 
 ## Mode commands
 
@@ -40,10 +44,11 @@ You start in normal mode
 `dd` = Cut line
 `x` = Cut character
 `u` = Undo
-`.` = Redo
+`^r` = Redo
 
 ## Useful commands
 
+`^d` = List autocompletions
 `:options` = Show vim options
 `:h` = Show vim help
 `:find` = find a file to open

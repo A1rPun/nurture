@@ -10,8 +10,13 @@ Every language directory contains:
 
 Other directories:
 
-- `_other` is a folder with some random and relatively funny stuff.
-- `_transpilers` is a collection of helloworld files for transpilers.
+- `build` build file templates
+- `database` info about working with specific databases + scripts
+- `editor` cool editors
+- `esolang` other ways of talking with the computer
+- `other` is a folder with some random and relatively funny stuff
+- `structure` common data structures used for config or transport
+- `transpiler` is a collection of helloworld files for transpilers
 
 ## [Binary size comparison](#binary-size-comparison)
 
