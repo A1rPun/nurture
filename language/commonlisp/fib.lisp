@@ -24,10 +24,10 @@
   (round (/ (expt (/ (+ (expt 5 .5d0) 1) 2) n) (expt 5 .5d0))))
 
 ;; depends on package infix-math - contributed by @bklaase
-(defun fib-formula-infix (n)
-  (let* ((sq5 (sqrt 5))
-         (phi ($ (1+ sq5) / 2d0)))
-    (round ($ phi ^ n / sq5))))
+;; (defun fib-formula-infix (n)
+;;   (let* ((sq5 (sqrt 5))
+;;          (phi ($ (1+ sq5) / 2d0)))
+;;     (round ($ phi ^ n / sq5))))
 
 (defun fib-formal (n)
   (cond
