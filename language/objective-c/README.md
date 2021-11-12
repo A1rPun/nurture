@@ -1,18 +1,34 @@
 # Objective-C
 
+- [Learn Objective-C in Y minutes](https://learnxinyminutes.com/docs/objective-c/)
+
+Make sure you have the objc library installed prior to installing GNUStep.
+For arch linux I needed the following packages:
+
 ```
-$ clang -o {program} {program}.m
+gcc-objc
+gnustep-base
+gnustep-make
 ```
 
-Or
+`gcc-objc` can collide with `swift`
+
+Now you can run the following commands:
+
+```
+$ make
+$ ./obj/HelloWorld
+$ make clean
+```
+
+### gcc
 
 ```
 $ gcc -o {program} {program}.m
 ```
 
-Or
+### clang
 
 ```
-$ make {program}
+$ clang -o {program} {program}.m
 ```
-
