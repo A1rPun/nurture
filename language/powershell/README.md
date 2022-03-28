@@ -3,16 +3,23 @@
 - [Documentation](https://docs.microsoft.com/en-us/powershell/)
 
 ```
+$ pwsh
+PS >
+```
+
+## Windows
+
+```
 powershell.exe {program}.ps1
 ```
 
-### powershell.exe
+Run powershell.exe
 
 ```
-> .\{program}.ps1
+PS > .\{program}.ps1
 ```
 
-### Troubleshooting
+## Troubleshooting
 
 ```
 powershell.exe {program}.ps1 -executionpolicy bypass

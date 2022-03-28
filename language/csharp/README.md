@@ -5,6 +5,8 @@
 - [.NET](https://docs.microsoft.com/en-us/dotnet/)
 
 ```
+$ dotnet new console -o {program}
+$ cd {program}
 $ dotnet run
 ```
 
@@ -15,8 +17,6 @@ $ mcs {program}.cs
 $ ./{program}.exe
 ```
 
-### Development requirements
+## Development requirements
 
-```
-mono
-```
+`mono` or `dotnet`

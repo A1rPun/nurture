@@ -36,3 +36,15 @@ Download vendor packages
 ```
 $ npm install
 ```
+
+## ASI
+
+AKA Use semicolons
+
+```
+const a = {}
+const b = {}
+[a, b].forEach(x => x.foo = 1)
+```
+
+> Uncaught ReferenceError: can't access lexical declaration 'b' before initialization
