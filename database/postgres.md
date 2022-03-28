@@ -6,7 +6,7 @@ $ psql -f {query}.sql
 
 ### One-liner
 ```
-$ psql -c "select 'Hello world! '"
+$ psql -c "select 'hello, world '"
 ```
 
 ## Management

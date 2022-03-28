@@ -9,7 +9,7 @@ $ groovy {program}.groovy
 
 ### One-liner
 ```
-$ groovy -e 'println "Hello world!"'
+$ groovy -e 'println "hello, world"'
 ```
 
 ## Compile

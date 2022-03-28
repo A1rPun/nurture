@@ -5,7 +5,7 @@
 Every language directory contains:
 
 - README with a quick how to compile & run your program. `{program}` denotes a placeholder.
-- Bare minimum `Hello world!` example.
+- Bare minimum `hello, world` example.
 - Possibly some cool Fibonacci implementations. The program will accept an argument from the command line.
 
 Other directories:

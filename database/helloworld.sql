@@ -1,1 +1,1 @@
-select 'Hello world!';
+select 'hello, world';

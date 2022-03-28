@@ -3,5 +3,5 @@ use Ada.Text_IO;
 
 procedure Helloworld is
 begin
-  Put_Line("Hello world!");
+  Put_Line("hello, world");
 end HelloWorld;

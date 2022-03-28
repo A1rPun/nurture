@@ -1,5 +1,5 @@
 %helloworld {
-  content: "Hello world!";
+  content: "hello, world";
 }
 
 * {
@@ -11,10 +11,10 @@
 Compiles to the following CSS:
 
 *:before {
-	content: "Hello world!";
+	content: "hello, world";
 }
 
 *:after {
-	content: "Hello world!";
+	content: "hello, world";
 }
 */

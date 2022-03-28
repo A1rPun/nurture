@@ -1,6 +1,6 @@
 program-id. helloworld.
 
 procedure division.
-  display "Hello world!"
+  display "hello, world"
   end-display goback
   .

@@ -1,8 +1,8 @@
-console.log('Hello world!');
+console.log('hello, world');
 
 /*
 Compiles to the following JavaScript:
 
 "use strict";
-console.log('Hello world!');
+console.log('hello, world');
 */

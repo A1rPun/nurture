@@ -1,7 +1,7 @@
 # Make sure to put a horizontal tab (\t) before all of the commands
 
 # Variable definitions
-HELLO_WORLD="Hello world!"
+HELLO_WORLD="hello, world"
 
 # This rule is the first one that is executed when running `make`
 hello:

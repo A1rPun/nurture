@@ -23,10 +23,10 @@ Token | Usage
 
 ## Example
 
-### Hello world!
+### hello, world
 
 ```
-|-"Hello world!":print
+|-"hello, world":print
 ```
 
 ### Fibonacci

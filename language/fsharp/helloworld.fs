@@ -1,1 +1,1 @@
-printfn "%s" "Hello world!"
+printfn "%s" "hello, world"

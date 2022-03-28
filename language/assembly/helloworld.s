@@ -15,5 +15,5 @@ _start:
 
 .data
 message:
-  .ascii "Hello world!\n"
+  .ascii "hello, world\n"
   length = .-message  # compute length of message

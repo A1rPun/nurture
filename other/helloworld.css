@@ -1,7 +1,7 @@
 *:before {
-  content: "Hello world!";
+  content: "hello, world";
 }
 
 *:after {
-  content: "Hello world!";
+  content: "hello, world";
 }
