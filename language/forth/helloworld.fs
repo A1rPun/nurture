@@ -1,1 +1,1 @@
-.( hello, world) CR
+." hello, world" CR bye
