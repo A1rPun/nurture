@@ -4,11 +4,11 @@
 - [Learn Forth in Y minutes](https://learnxinyminutes.com/docs/forth/)
 
 ```
-$ forth {program}.fs
+$ pforth {program}.fth
 ```
 
 or
 
 ```
-$ gforth {program}.fs
+$ gforth {program}.fth -e 'bye'
 ```
