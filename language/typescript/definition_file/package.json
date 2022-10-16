@@ -1,0 +1,8 @@
+{
+  "main": "fib.js",
+  "types": "fib.d.ts",
+  "files": [
+    "fib.js",
+    "fib.d.ts"
+  ]
+}
