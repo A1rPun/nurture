@@ -9,24 +9,24 @@ class CalcParser(Parser):
     precedence = (
         ('left', PLUS, MINUS),
         ('left', TIMES, DIVIDE),
-        ('left', MOD),
-        ('left', "."),
+        ('left', MOD, SQRT),
+        ('left', DOT),
         ('right', UMINUS),
     )
 
-    def __init__(self, names: dict = None):
-        self.names = names or {}
-        self.stack = []
+    def __init__(self):
+        self.names = { }
 
-    @property
-    def last_item_on_stack(self):
-        return self.stack[-1] if len(self.stack) > 0 else None
-
-    @_('IDENTIFIER ASSIGN expr')
+    @_('NAME ASSIGN expr')
     def statement(self, p):
-        self.names[p.IDENTIFIER] = p.expr
+        self.names[p.NAME] = p.expr
 
     @_('expr')
+    def statement(self, p):
+        # print(p.expr)
+        pass
+
+    @_('PRINT expr')
     def statement(self, p):
         print(p.expr)
 
@@ -46,6 +46,14 @@ class CalcParser(Parser):
     def expr(self, p):
         return p.expr0 / p.expr1
 
+    @_('expr MOD expr')
+    def expr(self, p):
+        return p.expr0 ** p.expr1
+
+    @_('SQRT expr')
+    def expr(self, p):
+        return sqrt(p.expr)
+
     @_('MINUS expr %prec UMINUS')
     def expr(self, p):
         return -p.expr
@@ -53,3 +61,28 @@ class CalcParser(Parser):
     @_('LPAREN expr RPAREN')
     def expr(self, p):
         return p.expr
+
+    @_('LACCOL expr RACCOL')
+    def expr(self, p):
+        return round(p.expr)
+
+    @_('NUMBER')
+    def expr(self, p):
+        return p.NUMBER
+
+    @_('NUMBER DOT NUMBER')
+    def expr(self, p):
+        # return 0
+        return float(f"{p.NUMBER0}.{p.NUMBER1}")
+
+    @_('STRING')
+    def expr(self, p):
+        return p.STRING[1:-1]
+
+    @_('NAME')
+    def expr(self, p):
+        try:
+            return self.names[p.NAME]
+        except LookupError:
+            print("Undefined name '%s'" % p.NAME)
+            return 0

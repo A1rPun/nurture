@@ -2,15 +2,17 @@ from sly import Lexer
 
 
 class CalcLexer(Lexer):
-    tokens = {IDENTIFIER, NUMBER, PLUS, TIMES, MINUS, DIVIDE,
-              MOD, SQRT, ASSIGN, LPAREN, RPAREN, QUOTE}
+    tokens = { NAME, STRING, NUMBER, ASSIGN, LPAREN, RPAREN, LACCOL, RACCOL,
+             PLUS, TIMES, MINUS, DIVIDE, MOD, SQRT, DOT, PRINT }
     ignore = ' \t'
-    literals = {'.', '!'}
+    literals = { '=' }
 
     # Special Symbols
+    ASSIGN = r'='
     LPAREN = r'\('
     RPAREN = r'\)'
-    QUOTE = r'\''
+    LACCOL = r'\{'
+    RACCOL = r'\}'
 
     # Arithmetic Operators
     PLUS = r'\+'
@@ -20,29 +22,29 @@ class CalcLexer(Lexer):
     MOD = r'\^'
     SQRT = r'√'
 
-    # Assigment Operators
-    ASSIGN = r'='
+    # Tokens
+    NAME = r'[a-zA-Z_][a-zA-Z0-9_]*'
+    NAME['print'] = PRINT
+    STRING = r'\".*\"'
+    DOT = r'\.'
 
     # Logical Operators
     # OR = r'\|\|'
     # AND = r'\&\&'
 
     # Relational Operators
-    # EQUALITY = r'(===|==)'
-    # INEQUALITY = r'(!==|!=)'
-    # BIGGER = r'(>=|>)'
-    # SMALLER = r'(<=|<)'
+    # EQUALITY = r'(=== | ==)'
+    # INEQUALITY = r'(!== | !=)'
+    # GREATER = r'(>= | >)'
+    # LESSER = r'(<= | <)'
 
-    @_(r"(0|[1-9][0-9]*)")
+    @_(r'\d+')
     def NUMBER(self, t):
         t.value = int(t.value)
         return t
 
-    IDENTIFIER = r'[a-zA-Z_][a-zA-Z0-9_]*'
-
-    ignore_newline = r'\n+'
-
-    def ignore_newline(self, t):
+    @_(r'\n+')
+    def newline(self, t):
         self.lineno += t.value.count('\n')
 
     def error(self, t):

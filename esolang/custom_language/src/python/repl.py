@@ -17,12 +17,12 @@ def repl(lexer, parser):
             if text == 'exit':
                 break
             run(lexer, parser, text)
-            print(parser.last_item_on_stack)
             linecount = linecount + 1
 
 
 def run(lexer, parser, text):
-    parser.parse(lexer.tokenize(text))
+    tokens = lexer.tokenize(text)
+    parser.parse(tokens)
 
 
 def runFile(lexer, parser, fileName):
@@ -30,8 +30,6 @@ def runFile(lexer, parser, fileName):
         content = f.readlines()
     for line in content:
         run(lexer, parser, line)
-    print(parser.last_item_on_stack)
-    # run(lexer, parser, "".join(content))
 
 
 if __name__ == '__main__':

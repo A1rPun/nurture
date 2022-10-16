@@ -2,4 +2,8 @@ phi = √5 / 2 + 0.5
 phi2 = 5 ^ 0.5 * 0.5 + 0.5
 phi3 = (1 + √5) / 2
 n = 29
-binet = ((5 ^ 0.5 + 1) / 2) ^ n / 5 ^ 0.5
+binet = {((5 ^ 0.5 + 1) / 2) ^ n / 5 ^ 0.5}
+print(phi)
+print(phi2)
+print(phi3)
+print(binet)
