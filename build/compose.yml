@@ -1,0 +1,13 @@
+# https://docs.docker.com/compose/gettingstarted/
+# https://docs.docker.com/reference/compose-file/
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+  db:
+    image: "postgres"
+    environment:
+      POSTGRES_USER: example
+      POSTGRES_DB: exampledb

@@ -1,12 +1,9 @@
-# Download image
-# $ docker pull node:latest
-# or
-# $ docker pull node:lts
+# https://docs.docker.com/reference/dockerfile/
+
 FROM node:latest
 LABEL maintainer="A1rPun <A1r@Pun.com>"
 LABEL description="An example Dockerfile"
 
-# Example run command
 RUN ps aux
 
 # List all images
@@ -17,3 +14,8 @@ RUN ps aux
 
 # Execute a command inside the container (ex: bash)
 # $ docker exec -it <container name or id> bash
+
+# Download image
+# $ docker pull node:latest
+# or
+# $ docker pull node:lts
