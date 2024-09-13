@@ -3,7 +3,7 @@
 # or
 # $ docker pull node:lts
 FROM node:latest
-LABEL maintainer="Thom Bakker <A1r@Pun.com>"
+LABEL maintainer="A1rPun <A1r@Pun.com>"
 LABEL description="An example Dockerfile"
 
 # Example run command
