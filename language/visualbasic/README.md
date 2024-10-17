@@ -1,5 +1,8 @@
 # Visual Basic
 
+- [Documentation](https://learn.microsoft.com/en-us/dotnet/visual-basic/)
+- [Learn VB in Y minutes](https://learnxinyminutes.com/docs/visualbasic/)
+
 ```
 $ vbnc {program}.vb
 $ chmod +x {program}.exe
