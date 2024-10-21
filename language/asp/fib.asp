@@ -7,7 +7,7 @@ body { background: #222; color: #fff; }
 </style>
 <%
 Dim vbnumber
-vbnumber = 8
+vbnumber = 29
 
 function vbfib(n)
     if n < 2 then
@@ -49,9 +49,9 @@ end function
 
 function fibTailAuxiliary(n, prevFib, fib)
     if n = 0 then
-        FibTailRecursive = prevFib
+        fibTailAuxiliary = prevFib
     else
-        FibTailRecursive = FibTailRecursive(n - 1, fib, prevFib + fib)
+        fibTailAuxiliary = fibTailAuxiliary(n - 1, fib, prevFib + fib)
     end if
 end function
 
@@ -59,7 +59,7 @@ end function
 <script  language="javascript" runat="server">
 "use strict";
 
-var vbnumber = 9; // Doesn't get overridden
+var vbnumber = 8; // Doesn't get overridden
 var jsnumber = vbnumber;
 
 function jsfib(n) {
@@ -69,7 +69,7 @@ function jsfib(n) {
 </head>
 <body>
 
-<p>Fib from vb: <%=FibTailRecursive(vbnumber, 0, 1)%></p>
+<p>Fib from vb: <%=FibTailRecursive(vbnumber)%></p>
 <p>Fib from js: <%=jsfib(jsnumber)%></p>
 
 </body>
