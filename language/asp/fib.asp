@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Fib</title>
-<style>
-body { background: #222; color: #fff; }
-</style>
 <%
 Dim vbnumber
 vbnumber = 29
 
-function vbfib(n)
+function vbFib(n)
     if n < 2 then
-        vbfib = n
+        vbFib = n
     else
-        vbfib = vbfib(n - 1) + vbfib(n - 2)
+        vbFib = vbFib(n - 1) + vbFib(n - 2)
     end if
 end function
 
@@ -44,33 +37,28 @@ function FibFormula(n)
 end function
 
 function FibTailRecursive(n)
-    FibTailRecursive = fibTailAuxiliary(n, 0, 1)
+    FibTailRecursive = FibTailAuxiliary(n, 0, 1)
 end function
 
-function fibTailAuxiliary(n, prevFib, fib)
+function FibTailAuxiliary(n, prevFib, fib)
     if n = 0 then
-        fibTailAuxiliary = prevFib
+        FibTailAuxiliary = prevFib
     else
-        fibTailAuxiliary = fibTailAuxiliary(n - 1, fib, prevFib + fib)
+        FibTailAuxiliary = FibTailAuxiliary(n - 1, fib, prevFib + fib)
     end if
 end function
-
 %>
-<script  language="javascript" runat="server">
+
+<script language="javascript" runat="server">
 "use strict";
 
 var vbnumber = 8; // Doesn't get overridden
 var jsnumber = vbnumber;
 
-function jsfib(n) {
-    return n < 2 ? n : jsfib(n - 1) + jsfib(n - 2);
+function jsFib(n) {
+    return n < 2 ? n : jsFib(n - 1) + jsFib(n - 2);
 }
 </script>
-</head>
-<body>
 
 <p>Fib from vb: <%=FibTailRecursive(vbnumber)%></p>
-<p>Fib from js: <%=jsfib(jsnumber)%></p>
-
-</body>
-</html>
+<p>Fib from js: <%=jsFib(jsnumber)%></p>
