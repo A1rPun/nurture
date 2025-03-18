@@ -1,1 +1,1 @@
-<%Response.Write("hello7777")%>, <%="world"%>
+<%Response.Write("hello")%>, <%="world"%>

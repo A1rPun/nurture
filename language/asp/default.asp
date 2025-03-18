@@ -1,6 +1,4 @@
-<%
-Option Explicit
-%>
+<% Option Explicit %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
