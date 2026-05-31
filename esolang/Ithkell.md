@@ -62,3 +62,12 @@ fibFormal n = fibFormal (n - 1) + fibFormal (n - 2)
 `[][:-1]` # Init
 `[][-1]` # Last
 `[][::-1]` # Reverse list
+
+### Better naming
+
+`symbol` = name
+``
+
+
+
+

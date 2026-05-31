@@ -13,6 +13,7 @@
 : fib_tail_auxiliary ( n prev_fib fib -- prev_fib fib n )
   rot dup 0 > if 1 - rot rot dup rot + recurse then
 ;
+
 : fib_tail_recursive ( n -- fib )
   0 1 fib_tail_auxiliary drop drop
 ;
